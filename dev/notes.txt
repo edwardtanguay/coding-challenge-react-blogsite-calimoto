@@ -1,13 +1,12 @@
-
-- diaryEntry
-	- date, string: "2024-06-22"
-	- body, string: "It was a great time..."
-	- tags, string[]: ["food", "friends"]
 - version 1
 	- create site with template
-		- (typescript)
-		- reduce from tailwind to sass, same design
+		- x (typescript)
+		- .. reduce from tailwind to sass, same design
 		- menu: Blog | Create New Entry
+	- type: diaryEntry
+		- date, string: "2024-06-22"
+		- body, string: "It was a great time..."
+		- tags, string[]: ["food", "friends"]
 	- list entries
 		- sorted by newest first
 	- create entry (new page)
