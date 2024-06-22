@@ -1,0 +1,50 @@
+
+- diaryEntry
+	- date, string: "2024-06-22"
+	- body, string: "It was a great time..."
+	- tags, string[]: ["food", "friends"]
+- version 1
+	- create site with template
+		- (typescript)
+		- reduce from tailwind to sass, same design
+		- menu: Blog | Create New Entry
+	- list entries
+		- sorted by newest first
+	- create entry (new page)
+		- FORM
+			- Date: [___________] (text), "2024-06-22"
+			- Body: (textarea), "This was..."
+			- Tags: [________________] (text), "family food"
+				- all lower case
+			- [Cancel] --> Blog
+			- [Save] --> saved --> Blog
+	- delete button next to each entry
+		- just delete it: click and gone
+	- filter:
+		- show all tags als buttons (right side)
+		- click on tag
+		- show it as selected
+		- only entries with those tags are shown
+		- only allow one tag to be selected 
+	- tag examples
+		- travel
+		- tech
+		- friends
+		- sports
+		- work
+	- 100% mobile
+		- tag area is a dropdown
+		- (check on phone)
+- version 2
+	- react icons
+	- delete: Are you sure? Yes/No
+	- tags: different colors
+	- tags: like Stack Overflow
+	- date entry: try a sophisticated date control 
+	- body: markdown?
+	- admin page
+		- two methods of tag selection
+		- A/B test
+	- create page link is a graphic
+	- modal for create
+	- model for delete yes/no
