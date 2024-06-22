@@ -15,7 +15,7 @@
 	- x list entries
 		- x sorted by newest first
 	- x delete button next to each entry
-		- .. just delete it: click and gone
+		- x just delete it: click and gone
 	- create entry (new page)
 		- FORM
 			- Date: [___________] (text), "2024-06-22"
