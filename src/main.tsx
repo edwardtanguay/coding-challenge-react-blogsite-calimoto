@@ -3,10 +3,10 @@ import App from "./App.tsx";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import "./styles/reset.scss";
 import "./styles/index.scss";
-import { PageWelcome } from "./pages/PageWelcome.tsx";
 import { PageInfo } from "./pages/PageInfo.tsx";
 import { PageAbout } from "./pages/PageAbout.tsx";
 import { Page404 } from "./pages/Page404.tsx";
+import { PageBlog } from "./pages/PageBlog.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -15,8 +15,8 @@ const router = createBrowserRouter([
 		element: <App />,
 		children: [
 			{
-				path: "/welcome",
-				element: <PageWelcome />,
+				path: "/blog",
+				element: <PageBlog/>
 			},
 			{
 				path: "info",
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/",
-				element: <Navigate to="/welcome" replace />,
+				element: <Navigate to="/blog" replace />,
 			},
 		],
 	},

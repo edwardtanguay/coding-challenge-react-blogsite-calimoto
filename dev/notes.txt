@@ -5,7 +5,7 @@
 		- x replace design from before
 			- x sass in a folder
 			- x gray
-		- .. style page 404
+		- x style page 404
 		- .. menu: Blog | Create New Entry
 	- type: diaryEntry
 		- date, string: "2024-06-22"
