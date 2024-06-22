@@ -5,7 +5,7 @@ import _initialBlogEntries from "../data/blogEntries.json";
 const initialBlogEntries = _initialBlogEntries.sort((a, b) => a.date > b.date ? 1 : -1);
 
 export const PageBlog = () => {
-	const [blogEntries, setBlogEntries] =
+	const [blogEntries] =
 		useState<BlogEntry[]>(initialBlogEntries);
 
 	return (
