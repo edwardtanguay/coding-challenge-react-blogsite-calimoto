@@ -1,16 +1,33 @@
 body {
 	background-color: #ccc;
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
 
-// a.active {
-// 	color: rgb(232, 232, 141);
-// }
+	nav {
+		margin-bottom: 1rem;
+		background-color: #aaa;
+		padding: 0.5rem;
+		border-radius: 0.3rem;
+
+		ul {
+			display: flex;
+			gap: 0.5rem;
+			li {
+				a {
+					text-decoration: none;
+					color: #000;
+					&.active {
+						color: brown;
+					}
+				}
+			}
+		}
+	}
+}
 
 /* smartphone view */
 @media (max-width: 577px) {
 	body {
-		margin: 1rem 0 0 1rem;
+		margin: 1rem;
 
 		h1 {
 			font-size: 1.3rem;
