@@ -30,6 +30,11 @@ export const PageCreateEntry = () => {
 							<label htmlFor="body">Body:</label>
 							<textarea spellCheck={false} className="body"></textarea>
 						</div>
+
+						<div className="buttonRow">
+							<button>Clear</button>
+							<button>Save</button>
+						</div>
 					</div>
 				</fieldset>
 			</form>

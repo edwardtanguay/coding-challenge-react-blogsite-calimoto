@@ -101,7 +101,7 @@ body {
 				border-radius: 6px;
 
 				legend {
-					margin-bottom:1rem;
+					margin-bottom: 1rem;
 				}
 
 				.rows {
@@ -123,9 +123,17 @@ body {
 						}
 
 						textarea.body {
-							height:10rem;
+							height: 10rem;
 							font-size: 1.1rem;
 							font-family: monospace;
+						}
+					}
+
+					.buttonRow {
+						display: flex;
+						justify-content: space-between;
+						button {
+							font-size: 0.9rem;
 						}
 					}
 				}
@@ -179,9 +187,16 @@ body {
 						}
 
 						textarea.body {
-							height:10rem;
+							height: 10rem;
 							font-size: 1.1rem;
 							font-family: monospace;
+						}
+					}
+					.buttonRow {
+						display: flex;
+						justify-content: space-between;
+						button {
+							font-size: 0.9rem;
 						}
 					}
 				}
