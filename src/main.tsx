@@ -3,7 +3,6 @@ import App from "./App.tsx";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import "./styles/reset.scss";
 import "./styles/index.scss";
-import { PageAbout } from "./pages/PageAbout.tsx";
 import { Page404 } from "./pages/Page404.tsx";
 import { PageBlog } from "./pages/PageBlog.tsx";
 import { PageCreateEntry } from "./pages/PageCreateEntry.tsx";
@@ -21,10 +20,6 @@ const router = createBrowserRouter([
 			{
 				path: "create-entry",
 				element: <PageCreateEntry/>
-			},
-			{
-				path: "about",
-				element: <PageAbout />,
 			},
 			{
 				path: "/",
