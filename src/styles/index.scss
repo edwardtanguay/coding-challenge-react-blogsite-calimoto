@@ -2,6 +2,10 @@ body {
 	background-color: #ccc;
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
+	a {
+		color: #000;
+	}
+
 	nav {
 		margin-bottom: 1rem;
 		background-color: #aaa;
@@ -20,6 +24,14 @@ body {
 					}
 				}
 			}
+		}
+	}
+
+	.page404 {
+		section {
+			font-size: 5rem;
+			color: #777;
+			margin-bottom: 1rem;
 		}
 	}
 }

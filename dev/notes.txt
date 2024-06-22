@@ -2,11 +2,11 @@
 	- create site with template
 		- x (typescript)
 		- x tailwind out
-		- .. replace design from before
-			- .. sass in a folder
-			- .. gray
-		- menu: Blog | Create New Entry
-		- style page 404
+		- x replace design from before
+			- x sass in a folder
+			- x gray
+		- .. style page 404
+		- .. menu: Blog | Create New Entry
 	- type: diaryEntry
 		- date, string: "2024-06-22"
 		- body, string: "It was a great time..."
