@@ -3,6 +3,7 @@
 		- x (typescript)
 		- .. reduce from tailwind to sass, same design
 		- menu: Blog | Create New Entry
+		- style page 404
 	- type: diaryEntry
 		- date, string: "2024-06-22"
 		- body, string: "It was a great time..."

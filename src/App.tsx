@@ -5,7 +5,7 @@ function App() {
 	return (
 		<>
 			<Header />
-			<main className="py-4">
+			<main>
 				<Outlet />
 			</main>
 		</>
