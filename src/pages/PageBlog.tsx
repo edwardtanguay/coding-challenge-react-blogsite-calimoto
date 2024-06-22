@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { BlogEntry } from "../types";
-import initialBlogEntries from "../data/blogEntries.json";
+import _initialBlogEntries from "../data/blogEntries.json";
+
+const initialBlogEntries = _initialBlogEntries.sort((a, b) => a.date > b.date ? 1 : -1);
 
 export const PageBlog = () => {
 	const [blogEntries, setBlogEntries] =

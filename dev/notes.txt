@@ -12,8 +12,8 @@
 		- body, string: "It was a great time..."
 		- tags, string[]: ["food", "friends"]
 	- x data/blogEntries.json
-	- .. list entries
-		- sorted by newest first
+	- x list entries
+		- .. sorted by newest first
 	- create entry (new page)
 		- FORM
 			- Date: [___________] (text), "2024-06-22"
