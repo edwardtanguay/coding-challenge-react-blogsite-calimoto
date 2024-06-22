@@ -11,7 +11,7 @@
 		- date, string: "2024-06-22"
 		- body, string: "It was a great time..."
 		- tags, string[]: ["food", "friends"]
-	- .. data/blogEntries.json
+	- x data/blogEntries.json
 	- .. list entries
 		- sorted by newest first
 	- create entry (new page)
@@ -43,6 +43,7 @@
 	- add color: look at some popular design first
 	- react icons
 	- delete: Are you sure? Yes/No
+	- display all as list or single
 	- tags: different colors
 	- tags: like Stack Overflow
 	- date entry: try a sophisticated date control 

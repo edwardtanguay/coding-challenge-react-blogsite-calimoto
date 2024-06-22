@@ -1,26 +1,31 @@
 [
 	{
 		"date": "2024-06-01",
+		"title": "My Morning Run",
 		"body": "Today, I woke up early for a morning run. The world was so peaceful and quiet. The crisp air and solitude helped clear my mind. It's amazing how such a small thing can set a positive tone for the entire day.",
 		"tags": ["morning", "exercise", "learning"]
 	},
 	{
 		"date": "2024-05-22",
+		"title": "Minimalistic Living",
 		"body": "I've started embracing minimalist living. It's not just about having fewer things, but about making space for what really matters. I feel more relaxed and focused. It's surprising how much mental clutter disappears when you get rid of physical clutter.",
 		"tags": ["minimalism", "lifestyle", "learning"]
 	},
 	{
 		"date": "2024-06-15",
+		"title": "Exploring Tokyo",
 		"body": "Exploring Tokyo has been an eye-opening experience. Beyond the bustling streets, I've discovered serene gardens and cozy cafes. The Nezu Shrine was a highlight, offering a peaceful escape from the city's hustle and bustle. It's a reminder to always look beyond the obvious.",
 		"tags": ["travel", "Japan", "exploration"]
 	},
 	{
 		"date": "2024-06-10",
+		"title": "My Activities with Spanish",
 		"body": "Learning Spanish has been a rewarding challenge. It's opening up new opportunities and helping me connect with more people. The daily practice is tough but fulfilling. Every mistake is a step towards improvement.",
 		"tags": ["learning", "language", "learning"]
 	},
 	{
 		"date": "2024-06-05",
+		"title": "The Garden in My Backyard",
 		"body": "I've started a sustainable garden in my backyard. Choosing native plants and using compost has made a big difference. It's satisfying to see the garden thrive with minimal intervention. Plus, it's a small way to help the environment.",
 		"tags": ["gardening", "sustainability", "travel"]
 	}
