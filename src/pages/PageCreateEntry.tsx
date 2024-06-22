@@ -1,12 +1,15 @@
+import React from "react";
+
 export const PageCreateEntry = () => {
+
+	const handleCancelForm = (e: React.MouseEvent<HTMLButtonElement>): void => {
+		e.preventDefault();
+		alert('222')
+	}
+
 	return (
 		<>
-			<form
-				className="createBlogEntry"
-				action="#"
-				method="post"
-				id="contact"
-			>
+			<form className="createBlogEntry">
 				<fieldset>
 					<legend>Create New Blog Entry</legend>
 
@@ -28,11 +31,14 @@ export const PageCreateEntry = () => {
 
 						<div className="row">
 							<label htmlFor="body">Body:</label>
-							<textarea spellCheck={false} className="body"></textarea>
+							<textarea
+								spellCheck={false}
+								className="body"
+							></textarea>
 						</div>
 
 						<div className="buttonRow">
-							<button>Clear</button>
+							<button onClick={(e) => handleCancelForm(e)}>Cancel</button>
 							<button>Save</button>
 						</div>
 					</div>

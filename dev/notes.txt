@@ -17,13 +17,14 @@
 	- x delete button next to each entry
 		- x just delete it: click and gone
 	- .. create entry (new page)
-		- FORM
+		- x FORM
 			- Date: [___________] (text), "2024-06-22"
 			- Body: (textarea), "This was..."
 			- Tags: [________________] (text), "family food"
 				- all lower case
 			- [Cancel] --> Blog
 			- [Save] --> saved --> Blog
+		- .. button handlers
 	- filter:
 		- show all tags als buttons (right side)
 		- click on tag
