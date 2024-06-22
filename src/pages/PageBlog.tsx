@@ -11,7 +11,10 @@ export const PageBlog = () => {
 			{blogEntries.map((blogEntry, index) => {
 				return (
 					<div key={index} className="blogEntry">
+						<div className="date">{blogEntry.date}</div>
 						<div className="title">{blogEntry.title}</div>
+						<div className="tags">{blogEntry.tags.join(' ')}</div>
+						<div className="body">{blogEntry.body}</div>
 					</div>
 				);
 			})}

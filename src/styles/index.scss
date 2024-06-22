@@ -37,6 +37,36 @@ body {
 				margin-bottom: 1rem;
 			}
 		}
+
+		.blogEntry {
+			background-color: #ccc;
+			padding: 1rem;
+			border-radius: .5rem;
+			margin-bottom: 1rem;
+
+			.date {
+				font-size: .8rem;
+				color: #555;
+				margin-bottom: .1rem;
+				font-style: italic;
+			}
+
+			.title {
+				font-size: 1.3rem;
+				margin-bottom: .2rem;
+			}
+
+			.tags {
+				font-family: monospace;
+				color: #555;
+				margin-bottom: .5rem;
+			}
+
+			.body {
+				font-style: italic;
+				line-height: 1.4rem;
+			}
+		}
 	}
 }
 
