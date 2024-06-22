@@ -46,6 +46,7 @@
 	- display all as list or single
 	- tags: different colors
 	- tags: like Stack Overflow
+	- useContext
 	- date entry: try a sophisticated date control 
 	- body: markdown?
 	- admin page
