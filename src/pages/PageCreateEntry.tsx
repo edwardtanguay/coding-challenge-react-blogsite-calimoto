@@ -9,6 +9,11 @@ export const PageCreateEntry = () => {
 		navigate('/blog');
 	};
 
+	const handleSaveForm = (e: React.MouseEvent<HTMLButtonElement>): void => {
+		e.preventDefault();
+		navigate('/blog');
+	};
+
 	return (
 		<>
 			<form className="createBlogEntry">
@@ -43,7 +48,7 @@ export const PageCreateEntry = () => {
 							<button onClick={(e) => handleCancelForm(e)}>
 								Cancel
 							</button>
-							<button>Save</button>
+							<button onClick={(e) => handleSaveForm(e)}>Save</button>
 						</div>
 					</div>
 				</fieldset>
