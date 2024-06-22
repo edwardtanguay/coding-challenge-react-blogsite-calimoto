@@ -3,6 +3,7 @@
 		- x (typescript)
 		- x tailwind out
 		- .. replace design from before
+			- .. sass in a folder
 			- .. gray
 		- menu: Blog | Create New Entry
 		- style page 404

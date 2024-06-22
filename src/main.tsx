@@ -1,8 +1,8 @@
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
-import "./reset.scss";
-import "./index.scss";
+import "./styles/reset.scss";
+import "./styles/index.scss";
 import { PageWelcome } from "./pages/PageWelcome.tsx";
 import { PageInfo } from "./pages/PageInfo.tsx";
 import { PageAbout } from "./pages/PageAbout.tsx";
