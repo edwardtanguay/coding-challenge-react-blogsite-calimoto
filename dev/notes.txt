@@ -6,12 +6,13 @@
 			- x sass in a folder
 			- x gray
 		- x style page 404
-		- .. menu: Blog | Create New Entry
-	- type: diaryEntry
+		- x menu: Blog | Create New Entry
+	- x type: diaryEntry
 		- date, string: "2024-06-22"
 		- body, string: "It was a great time..."
 		- tags, string[]: ["food", "friends"]
-	- list entries
+	- .. data/blogEntries.json
+	- .. list entries
 		- sorted by newest first
 	- create entry (new page)
 		- FORM
@@ -50,5 +51,6 @@
 		- two methods of tag selection
 		- A/B test
 	- create page link is a graphic
+	- Zod
 	- modal for create
 	- model for delete yes/no
