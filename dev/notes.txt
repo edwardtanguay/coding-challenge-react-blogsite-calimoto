@@ -1,7 +1,9 @@
 - version 1
 	- create site with template
 		- x (typescript)
-		- .. reduce from tailwind to sass, same design
+		- x tailwind out
+		- .. replace design from before
+			- .. gray
 		- menu: Blog | Create New Entry
 		- style page 404
 	- type: diaryEntry
@@ -36,6 +38,7 @@
 		- tag area is a dropdown
 		- (check on phone)
 - version 2
+	- add color: look at some popular design first
 	- react icons
 	- delete: Are you sure? Yes/No
 	- tags: different colors
