@@ -12,18 +12,23 @@ export const PageCreateEntry = () => {
 
 					<div className="rows">
 						<div className="row">
-							<label htmlFor="fullName">Name:</label>
-							<input type="text" name="fullName" id="fullName" />
+							<label htmlFor="date">Date:</label>
+							<input type="text" name="date" id="date" />
 						</div>
 
 						<div className="row">
-							<label htmlFor="email">Email:</label>
-							<input type="email" name="email" id="email" />
+							<label htmlFor="title">Title:</label>
+							<input type="text" name="title" id="title" />
 						</div>
 
 						<div className="row">
-							<label htmlFor="phone">Phone:</label>
-							<input type="tel" name="phone" id="phone" />
+							<label htmlFor="tags">Tags:</label>
+							<input type="text" name="tags" id="tags" />
+						</div>
+
+						<div className="row">
+							<label htmlFor="body">Body:</label>
+							<textarea spellCheck={false} className="body"></textarea>
 						</div>
 					</div>
 				</fieldset>
