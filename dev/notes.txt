@@ -16,7 +16,7 @@
 		- x sorted by newest first
 	- x delete button next to each entry
 		- x just delete it: click and gone
-	- .. create entry (new page)
+	- x create entry (new page)
 		- x FORM
 			- Date: [___________] (text), "2024-06-22"
 			- Body: (textarea), "This was..."
@@ -24,7 +24,11 @@
 				- all lower case
 			- [Cancel] --> Blog
 			- [Save] --> saved --> Blog
-		- .. button handlers
+		- x button handlers
+	- implement useContext with blogEntries
+	- mock out handleSaveForm to save a mock blogEntry
+	- createEntryPage: create formData object
+		- handleSaveForm: save form data to blogEntry
 	- filter:
 		- show all tags als buttons (right side)
 		- click on tag
