@@ -1,11 +1,22 @@
 body {
 	background-color: #ccc;
-	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	margin: 2rem 0 0 2rem;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
-
 
 // a.active {
 // 	color: rgb(232, 232, 141);
 // }
+
+/* smartphone view */
+@media (max-width: 577px) {
+	body {
+		margin: 1rem 0 0 1rem;
+	}
+}
+
+/* computer/tablet view */
+@media (min-width: 578px) {
+	body {
+		margin: 2rem 0 0 2rem;
+	}
+}
