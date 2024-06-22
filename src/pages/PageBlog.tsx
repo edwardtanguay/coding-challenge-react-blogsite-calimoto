@@ -8,7 +8,12 @@ const initialBlogEntries = _initialBlogEntries.sort((a, b) =>
 );
 
 export const PageBlog = () => {
-	const [blogEntries] = useState<BlogEntry[]>(initialBlogEntries);
+	const [blogEntries, setBlogEntries] = useState<BlogEntry[]>(initialBlogEntries);
+
+	const handleDeleteBlogEntry = (blogEntry: BlogEntry): void => {
+		const _blogEntries = blogEntries.filter(m => m.id !== blogEntry.id);
+		setBlogEntries(_blogEntries);
+	}
 
 	return (
 		<>
@@ -18,7 +23,7 @@ export const PageBlog = () => {
 						<div className="blogEntryHeader">
 							<div className="date">{blogEntry.date}</div>
 							<div className="deleteIcon">
-								<FaTrashAlt />
+								<FaTrashAlt onClick={() => handleDeleteBlogEntry(blogEntry)} />
 							</div>
 						</div>
 						<div className="title">{blogEntry.title}</div>
