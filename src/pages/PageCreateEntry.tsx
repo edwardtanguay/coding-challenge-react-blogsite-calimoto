@@ -1,11 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const PageCreateEntry = () => {
+	const navigate = useNavigate();
 
 	const handleCancelForm = (e: React.MouseEvent<HTMLButtonElement>): void => {
 		e.preventDefault();
-		alert('222')
-	}
+		navigate('/blog');
+	};
 
 	return (
 		<>
@@ -38,7 +40,9 @@ export const PageCreateEntry = () => {
 						</div>
 
 						<div className="buttonRow">
-							<button onClick={(e) => handleCancelForm(e)}>Cancel</button>
+							<button onClick={(e) => handleCancelForm(e)}>
+								Cancel
+							</button>
 							<button>Save</button>
 						</div>
 					</div>
