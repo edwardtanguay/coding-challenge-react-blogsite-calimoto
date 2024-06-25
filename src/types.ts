@@ -19,7 +19,8 @@ export type FormInfo = {
 		error: string;
 	};
 	tags: {
-		value: string[];
+		value: string;
+		derivedValue: string[];
 		message: string;
 		error: string;
 	};

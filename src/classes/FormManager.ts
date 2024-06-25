@@ -26,7 +26,7 @@ export class FormManager {
 		this.formInfo.id = blogEntry.id;
 		this.formInfo.date.value = blogEntry.date;
 		this.formInfo.title.value = blogEntry.title;
-		this.formInfo.tags.value = structuredClone(blogEntry.tags);
+		this.formInfo.tags.value = blogEntry.tags.join(" ");
 		this.formInfo.body.value = blogEntry.body;
 	}
 
@@ -44,7 +44,8 @@ export class FormManager {
 				error: "",
 			},
 			tags: {
-				value: [],
+				value: "",
+				derivedValue: [],
 				message: "",
 				error: "",
 			},
@@ -89,10 +90,9 @@ export class FormManager {
 			this.formInfo.title.message = "✓";
 			this.formInfo.title.error = "";
 		}
-		
+
 		// tags
 		const tgl = this.formInfo.tags.value.length;
-		console.log(222, tgl);
 		if (tgl === 0) {
 			this.formInfo.tags.message = "(enter tags)";
 			this.formInfo.tags.error = "";
@@ -100,7 +100,6 @@ export class FormManager {
 			this.formInfo.tags.message = "✓";
 			this.formInfo.tags.error = "";
 		}
-
 	}
 
 	public getFormInfo(): FormInfo {
@@ -112,7 +111,7 @@ export class FormManager {
 			id: this.formInfo.id,
 			date: this.formInfo.date.value,
 			title: this.formInfo.title.value,
-			tags: structuredClone(this.formInfo.tags.value),
+			tags: this.formInfo.tags.value.split(" "),
 			body: this.formInfo.body.value,
 		};
 	}

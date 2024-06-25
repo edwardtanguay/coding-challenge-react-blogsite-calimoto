@@ -8,7 +8,9 @@ import { FormManager } from "../classes/FormManager";
 export const PageCreateEntry = () => {
 	const { handleSaveNewBlogEntry } = useContext(AppContext);
 	const navigate = useNavigate();
-	const [formInfo, setFormInfo] = useState<FormInfo>(FormManager.getBlankFormInfo());
+	const [formInfo, setFormInfo] = useState<FormInfo>(
+		FormManager.getBlankFormInfo()
+	);
 
 	const handleCancelForm = (e: React.MouseEvent<HTMLButtonElement>): void => {
 		e.preventDefault();
@@ -31,10 +33,8 @@ export const PageCreateEntry = () => {
 			case "date":
 			case "title":
 			case "body":
-				formInfo[field].value = value;
-				break;
 			case "tags":
-				formInfo.tags.value = value.split(" ");
+				formInfo[field].value = value;
 				break;
 			default:
 				console.log(
@@ -56,8 +56,12 @@ export const PageCreateEntry = () => {
 							<div className="rowHeader">
 								<label htmlFor="date">Date</label>
 								<div>
-									<span className="message">{formInfo.date.message}</span>
-									<span className="error">{formInfo.date.error}</span>
+									<span className="message">
+										{formInfo.date.message}
+									</span>
+									<span className="error">
+										{formInfo.date.error}
+									</span>
 								</div>
 							</div>
 							<input
@@ -73,8 +77,12 @@ export const PageCreateEntry = () => {
 							<div className="rowHeader">
 								<label htmlFor="title">Title</label>
 								<div>
-									<span className="message">{formInfo.title.message}</span>
-									<span className="error">{formInfo.title.error}</span>
+									<span className="message">
+										{formInfo.title.message}
+									</span>
+									<span className="error">
+										{formInfo.title.error}
+									</span>
 								</div>
 							</div>
 							<input
@@ -90,13 +98,17 @@ export const PageCreateEntry = () => {
 							<div className="rowHeader">
 								<label htmlFor="tags">Tags</label>
 								<div>
-									<span className="message">{formInfo.tags.message}</span>
-									<span className="error">{formInfo.tags.error}</span>
+									<span className="message">
+										{formInfo.tags.message}
+									</span>
+									<span className="error">
+										{formInfo.tags.error}
+									</span>
 								</div>
 							</div>
 							<input
 								type="text"
-								value={formInfo.tags.value.join(" ")}
+								value={formInfo.tags.value}
 								name="tags"
 								id="tags"
 								onChange={(e) => handleFormChange("tags", e)}
@@ -107,8 +119,12 @@ export const PageCreateEntry = () => {
 							<div className="rowHeader">
 								<label htmlFor="body">Body</label>
 								<div>
-									<span className="message">{formInfo.body.message}</span>
-									<span className="error">{formInfo.body.error}</span>
+									<span className="message">
+										{formInfo.body.message}
+									</span>
+									<span className="error">
+										{formInfo.body.error}
+									</span>
 								</div>
 							</div>
 							<textarea
