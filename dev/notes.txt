@@ -43,9 +43,10 @@
 			- x if duplicate
 		- x body
 		- x formIsValid and disable save button
+
 	- .. refactor to SingleBlogEntry
 	- filter:
-		- show all tags als buttons (right side)
+		- show all tags als buttons (top)
 		- click on tag
 		- show it as selected
 		- only entries with those tags are shown
@@ -55,12 +56,14 @@
 	- 100% mobile
 		- tag area is a dropdown
 		- (check on phone)
+		- check on chrome
 	- todo
 		- all pages are sections
-		- mobile, take red off of trashcan
 		- making of
 			- gifs for mobile and computer, etc.
 		- document tools
+		- jest tests
+		
 - readme
 	- Prerequisites
 		- Node version
