@@ -48,12 +48,8 @@
 		- show it as selected
 		- only entries with those tags are shown
 		- only allow one tag to be selected 
-	- tag examples
-		- travel
-		- tech
-		- friends
-		- sports
-		- work
+	- form:
+		- show tag choice, tag comletion
 	- 100% mobile
 		- tag area is a dropdown
 		- (check on phone)

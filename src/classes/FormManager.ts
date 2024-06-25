@@ -107,6 +107,23 @@ export class FormManager {
 			this.formInfo.tags.message = "✓";
 			this.formInfo.tags.error = "";
 		}
+
+		// body
+		const bl = this.formInfo.body.value.length;
+		if (bl === 0) {
+			this.formInfo.body.message = "(enter body)";
+			this.formInfo.body.error = "";
+		} else if (bl >= 1 && bl <= 20) {
+			this.formInfo.body.message = "";
+			this.formInfo.body.error = "too short";
+		} else if (bl > 256) {
+			this.formInfo.body.message = "";
+			this.formInfo.body.error = "too long";
+		} else if (bl !== 0) {
+			this.formInfo.body.message = "✓";
+			this.formInfo.body.error = "";
+		}
+
 	}
 
 	public getFormInfo(): FormInfo {
