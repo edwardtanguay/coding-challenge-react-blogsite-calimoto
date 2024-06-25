@@ -5,7 +5,7 @@ export const Header = () => {
 	return (
 		<div>
 			<div className="header">
-				<h1>My Writings</h1>
+				<h1>My Rides</h1>
 				<NavLink to="/making-of">the making of</NavLink>
 			</div>
 			<Nav />

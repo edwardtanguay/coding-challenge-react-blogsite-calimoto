@@ -33,8 +33,9 @@
 		- x resort
 	- x createSuuid
 	- .. createEntryPage: create formData object
-	 	- .. add values to form
-		- .. save to form with base functionality
+	 	- x add values to form
+		- x save to form with base functionality
+		- .. convert data to motorcycle rides
 		- add minimal validation
 	- refactor to SingleBlogEntry
 	- filter:

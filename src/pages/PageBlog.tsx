@@ -11,7 +11,7 @@ export const PageBlog = () => {
 				return (
 					<div key={index} className="blogEntry">
 						<div className="blogEntryHeader">
-							<div className="date">{blogEntry.date} - ({blogEntry.id})</div>
+							<div className="date">{blogEntry.date}</div>
 							<div className="deleteIcon">
 								<FaTrashAlt
 									onClick={() =>
