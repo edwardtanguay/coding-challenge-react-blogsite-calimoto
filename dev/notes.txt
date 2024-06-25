@@ -25,9 +25,10 @@
 			- [Cancel] --> Blog
 			- [Save] --> saved --> Blog
 		- x button handlers
-	- .. making of site
-		.. add actual page
-	- implement useContext with blogEntries
+	- x making of site
+		x add actual page
+	- .. implement useContext with blogEntries
+		- ..
 	- mock out handleSaveForm to save a mock blogEntry
 	- createEntryPage: create formData object
 		- handleSaveForm: save form data to blogEntry
@@ -49,6 +50,8 @@
 	- todo
 		- all pages are sections
 		- mobile, take red off of trashcan
+		- making of
+			- gifs for mobile and computer, etc.
 - version 2
 	- add color: look at some popular design first
 	- react icons
