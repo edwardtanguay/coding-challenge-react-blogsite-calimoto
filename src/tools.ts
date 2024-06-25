@@ -63,3 +63,25 @@ export const isValidIsoDateFormat = (date: string): boolean => {
 		d.getDate() === day
 	);
 };
+
+export const arrayHasDuplicateItems = (items: string[]): boolean => {
+	const seenItems = new Set();
+
+	for (const item of items) {
+		if (seenItems.has(item)) {
+			return true;
+		}
+		seenItems.add(item);
+	}
+
+	return false;
+};
+
+export const stringInArrayTooShort = (arr: string[], limit:number): boolean => {
+	for (const str of arr) {
+		if (str.length < limit) {
+			return true;
+		}
+	}
+	return false;
+};

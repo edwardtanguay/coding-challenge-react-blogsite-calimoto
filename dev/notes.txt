@@ -36,8 +36,11 @@
 	 	- x add values to form
 		- x save to form with base functionality
 		- x convert data to motorcycle rides
-		- .. fix display dates
-		- .. add minimal validation
+		- x fix display dates
+		- x add minimal validation
+	- .. all validate
+		- .. tags
+			- if duplicate
 	- refactor to SingleBlogEntry
 	- filter:
 		- show all tags als buttons (right side)
