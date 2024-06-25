@@ -66,6 +66,8 @@
 	- Tested
 		- Ubuntu 22.04
 		- Windows 10 
+	- show mobile and computer views
+		- Google emulator
 - making of
 	- (cull and delete above notes)
 	- note

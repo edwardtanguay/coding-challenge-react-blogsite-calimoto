@@ -1,14 +1,14 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { BlogEntry } from "../types";
 import { AppContext } from "../appContext";
 import * as tools from "../tools";
+import { FormInfo } from "../types";
 
 export const PageCreateEntry = () => {
 	const { handleSaveNewBlogEntry } = useContext(AppContext);
 	const navigate = useNavigate();
-	const [blogEntry, setBlogEntry] = useState<BlogEntry>(
-		tools.getBlankBlogEntry()
+	const [formInfo, setFormInfo] = useState<FormInfo>(
+		tools.getBlankFormInfo()
 	);
 
 	const handleCancelForm = (e: React.MouseEvent<HTMLButtonElement>): void => {
@@ -18,7 +18,7 @@ export const PageCreateEntry = () => {
 
 	const handleSaveForm = (e: React.MouseEvent<HTMLButtonElement>): void => {
 		e.preventDefault();
-		handleSaveNewBlogEntry(blogEntry);
+		handleSaveNewBlogEntry(formInfo.blogEntry);
 		navigate("/blog");
 	};
 
@@ -31,17 +31,17 @@ export const PageCreateEntry = () => {
 			case "date":
 			case "title":
 			case "body":
-				blogEntry[field] = value;
+				formInfo.blogEntry[field] = value;
 				break;
 			case "tags":
-				blogEntry[field] = value.split(" ");
+				formInfo.blogEntry[field] = value.split(" ");
 				break;
 			default:
 				console.log(
 					`BAD FIELD: "${tools.stripTextOfDangerousContent(field)}"`
 				);
 		}
-		setBlogEntry(structuredClone(blogEntry));
+		setFormInfo(structuredClone(formInfo));
 	};
 
 	return (
@@ -55,7 +55,7 @@ export const PageCreateEntry = () => {
 							<label htmlFor="date">Date:</label>
 							<input
 								type="text"
-								value={blogEntry.date}
+								value={formInfo.blogEntry.date}
 								name="date"
 								id="date"
 								onChange={(e) => handleFormChange("date", e)}
@@ -66,7 +66,7 @@ export const PageCreateEntry = () => {
 							<label htmlFor="title">Title:</label>
 							<input
 								type="text"
-								value={blogEntry.title}
+								value={formInfo.blogEntry.title}
 								name="title"
 								id="title"
 								onChange={(e) => handleFormChange("title", e)}
@@ -77,7 +77,7 @@ export const PageCreateEntry = () => {
 							<label htmlFor="tags">Tags:</label>
 							<input
 								type="text"
-								value={blogEntry.tags.join(" ")}
+								value={formInfo.blogEntry.tags.join(" ")}
 								name="tags"
 								id="tags"
 								onChange={(e) => handleFormChange("tags", e)}
@@ -88,7 +88,7 @@ export const PageCreateEntry = () => {
 							<label htmlFor="body">Body:</label>
 							<textarea
 								spellCheck={false}
-								value={blogEntry.body}
+								value={formInfo.blogEntry.body}
 								className="body"
 								onChange={(e) => handleFormChange("body", e)}
 							></textarea>

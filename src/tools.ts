@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { BlogEntry } from "./types";
+import { BlogEntry, FormInfo } from "./types";
 import * as tools from "./tools.ts";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 
@@ -33,6 +33,15 @@ export const getBlankBlogEntry = (): BlogEntry => {
 		body: "",
 		tags: [],
 	};
+};
+
+export const getBlankFormInfo = (): FormInfo => {
+	return {
+		blogEntry: tools.getBlankBlogEntry(),
+		messages: [],
+		errorMessages: []
+
+	}
 };
 
 export const stripTextOfDangerousContent = (input: string): string => {

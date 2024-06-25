@@ -11,7 +11,13 @@ export type FormError = {
 	errorMessage: string
 }
 
-export type FormData = {
+export type FormMessage = {
+	field: string,
+	message: string
+}
+
+export type FormInfo = {
 	blogEntry: BlogEntry,
+	messages: FormMessage[],
 	errorMessages: FormError[]
 }
