@@ -27,9 +27,9 @@
 		- x button handlers
 	- x making of site
 		x add actual page
-	- .. implement useContext with blogEntries
-		- ..
-		- mock out handleSaveForm to save a mock blogEntry
+	- x implement useContext with blogEntries
+	- .. move handler
+		- .. mock out handleSaveForm to save a mock blogEntry
 	- createEntryPage: create formData object
 		- handleSaveForm: save form data to blogEntry
 	- filter:

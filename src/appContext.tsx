@@ -10,6 +10,7 @@ const initialBlogEntries = _initialBlogEntries.sort((a, b) =>
 interface IAppContext {
 	blogEntries: BlogEntry[];
 	setBlogEntries: (blogEntries: BlogEntry[]) => void;
+	handleDeleteBlogEntry: (blogEntry: BlogEntry) => void;
 }
 
 interface IAppProvider {
@@ -22,11 +23,17 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	const [blogEntries, setBlogEntries] =
 		useState<BlogEntry[]>(initialBlogEntries);
 
+	const handleDeleteBlogEntry = (blogEntry: BlogEntry): void => {
+		const _blogEntries = blogEntries.filter((m) => m.id !== blogEntry.id);
+		setBlogEntries(_blogEntries);
+	};
+
 	return (
 		<AppContext.Provider
 			value={{
 				blogEntries,
 				setBlogEntries,
+				handleDeleteBlogEntry,
 			}}
 		>
 			{children}

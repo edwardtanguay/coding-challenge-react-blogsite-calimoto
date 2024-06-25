@@ -1,19 +1,9 @@
-import { useState } from "react";
-import { BlogEntry } from "../types";
-import _initialBlogEntries from "../data/blogEntries.json";
+import { useContext } from "react";
 import { FaTrashAlt } from "react-icons/fa";
-
-const initialBlogEntries = _initialBlogEntries.sort((a, b) =>
-	a.date > b.date ? 1 : -1
-);
+import { AppContext } from "../appContext";
 
 export const PageBlog = () => {
-	const [blogEntries, setBlogEntries] = useState<BlogEntry[]>(initialBlogEntries);
-
-	const handleDeleteBlogEntry = (blogEntry: BlogEntry): void => {
-		const _blogEntries = blogEntries.filter(m => m.id !== blogEntry.id);
-		setBlogEntries(_blogEntries);
-	}
+	const { blogEntries, handleDeleteBlogEntry } = useContext(AppContext);
 
 	return (
 		<>
@@ -23,7 +13,11 @@ export const PageBlog = () => {
 						<div className="blogEntryHeader">
 							<div className="date">{blogEntry.date}</div>
 							<div className="deleteIcon">
-								<FaTrashAlt onClick={() => handleDeleteBlogEntry(blogEntry)} />
+								<FaTrashAlt
+									onClick={() =>
+										handleDeleteBlogEntry(blogEntry)
+									}
+								/>
 							</div>
 						</div>
 						<div className="title">{blogEntry.title}</div>
