@@ -11,6 +11,7 @@ import { Page404 } from "./pages/Page404.tsx";
 import { PageBlog } from "./pages/PageBlog.tsx";
 import { PageCreateEntry } from "./pages/PageCreateEntry.tsx";
 import { PageMakingOf } from "./pages/PageMakingOf.tsx";
+import { AppProvider } from "./appContext.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -39,5 +40,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-	<RouterProvider router={router} />
+	<AppProvider>
+		<RouterProvider router={router} />
+	</AppProvider>
 );
