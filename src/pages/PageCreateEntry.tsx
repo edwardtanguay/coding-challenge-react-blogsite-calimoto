@@ -16,7 +16,7 @@ export const PageCreateEntry = () => {
 	const handleSaveForm = (e: React.MouseEvent<HTMLButtonElement>): void => {
 		e.preventDefault();
 		const blogEntry: BlogEntry = {
-			id: "2837sh",
+			id: tools.generateSuuid(),
 			date: tools.getCurrentDate(),
 			title: "ttt",
 			body: "bbb",

@@ -29,8 +29,9 @@
 		x add actual page
 	- x implement useContext with blogEntries
 	- x move handler
-	- .. mock out handleSaveForm to save a mock blogEntry
-		- .. resort
+	- x mock out handleSaveForm to save a mock blogEntry
+		- x resort
+	- .. createSuuid
 	- createEntryPage: create formData object
 		- handleSaveForm: save form data to blogEntry
 	- filter:
@@ -53,6 +54,7 @@
 		- mobile, take red off of trashcan
 		- making of
 			- gifs for mobile and computer, etc.
+		- document tools
 - readme
 	- Prerequisites
 		- Node version
@@ -69,12 +71,17 @@
 		- why tools
 			- test
 			- flexibility, e.g. enable user settings, sort order, etc. 
+		- Git history is intact
+			- view with `git checkout <hash>` and `git 
+		- suuid
+		- how to use tools, gif
 	- version 2
 		- add color: look at some popular design first
 		- delete: Are you sure? Yes/No
 		- display all as list or single
 		- tags: different colors
 		- tags: like Stack Overflow
+		- handle various sized blog entries
 		- useContext
 		- date entry: try a sophisticated date control 
 		- body: markdown?

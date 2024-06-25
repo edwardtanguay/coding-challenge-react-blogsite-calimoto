@@ -8,3 +8,15 @@ export const getCurrentDate = (): string => {
 export const sortDates = (blogEntries: BlogEntry[]): void => {
 	blogEntries.sort((a, b) => (a.date < b.date ? 1 : -1));
 };
+
+export const generateSuuid = () => {
+	const characters =
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	let shortUUID = "";
+
+	for (let i = 0; i < 6; i++) {
+		const randomIndex = Math.floor(Math.random() * characters.length);
+		shortUUID += characters.charAt(randomIndex);
+	}
+	return shortUUID;
+};
