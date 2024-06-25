@@ -1,5 +1,5 @@
 - version 1
-	- create site with template
+	- x create site with template
 		- x (typescript)
 		- x tailwind out
 		- x replace design from before
@@ -30,6 +30,7 @@
 	- x implement useContext with blogEntries
 	- x move handler
 	- .. mock out handleSaveForm to save a mock blogEntry
+		- .. resort
 	- createEntryPage: create formData object
 		- handleSaveForm: save form data to blogEntry
 	- filter:
@@ -59,12 +60,17 @@
 		- Ubuntu 22.04
 		- Windows 10 
 - making of
+	- (cull and delete above notes)
 	- note
+		- purposely kept a minimal design (shades of gray)
 		- TypeScript functions have return types
 		- prettier
+		- form accessibility
+		- why tools
+			- test
+			- flexibility, e.g. enable user settings, sort order, etc. 
 	- version 2
 		- add color: look at some popular design first
-		- react icons
 		- delete: Are you sure? Yes/No
 		- display all as list or single
 		- tags: different colors
@@ -80,3 +86,6 @@
 		- modal for create
 		- model for delete yes/no
 		- testing
+		- markdown
+		- shadcn/ui
+		- Tailwind

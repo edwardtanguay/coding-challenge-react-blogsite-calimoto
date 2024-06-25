@@ -2,10 +2,9 @@
 import { createContext, useState } from "react";
 import { BlogEntry } from "./types";
 import _initialBlogEntries from "./data/blogEntries.json";
+import * as tools from "./tools";
 
-const initialBlogEntries = _initialBlogEntries.sort((a, b) =>
-	a.date > b.date ? 1 : -1
-);
+tools.sortDates(_initialBlogEntries);
 
 interface IAppContext {
 	blogEntries: BlogEntry[];
@@ -22,7 +21,7 @@ export const AppContext = createContext<IAppContext>({} as IAppContext);
 
 export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	const [blogEntries, setBlogEntries] =
-		useState<BlogEntry[]>(initialBlogEntries);
+		useState<BlogEntry[]>(_initialBlogEntries);
 
 	const handleDeleteBlogEntry = (blogEntry: BlogEntry): void => {
 		const _blogEntries = blogEntries.filter((m) => m.id !== blogEntry.id);
@@ -31,6 +30,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 
 	const handleSaveNewBlogEntry = (blogEntry: BlogEntry): void => {
 		blogEntries.push(blogEntry);
+		tools.sortDates(blogEntries);
 		setBlogEntries(structuredClone(blogEntries));
 	};
 
@@ -40,7 +40,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 				blogEntries,
 				setBlogEntries,
 				handleDeleteBlogEntry,
-				handleSaveNewBlogEntry
+				handleSaveNewBlogEntry,
 			}}
 		>
 			{children}
