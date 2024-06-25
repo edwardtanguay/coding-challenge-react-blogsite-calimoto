@@ -9,7 +9,13 @@ export const PageBlog = () => {
 
 	return (
 		<>
-			<section className="tagsArea">tags...</section>
+			<section className="tagsArea">
+				{allTags.map((tag, index) => {
+					return (
+						<button key={index}>{tag}</button>
+					)
+				})}
+					</section>
 			{blogEntries.map((blogEntry, index) => {
 				return (
 					<div key={index} className="blogEntry">

@@ -15,6 +15,17 @@ body {
 	}
 
 	section.siteContent {
+
+		.tagsArea {
+			display: flex;
+			gap: .3rem;
+			margin: .5rem 1rem;
+
+			button {
+				font-size: .7rem;
+			}
+		}
+
 		nav {
 			margin-bottom: 1rem;
 			background-color: #aaa;
