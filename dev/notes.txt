@@ -36,6 +36,7 @@
 	 	- .. add values to form
 		- .. save to form with base functionality
 		- add minimal validation
+	- refactor to SingleBlogEntry
 	- filter:
 		- show all tags als buttons (right side)
 		- click on tag
@@ -70,6 +71,7 @@
 		- TypeScript functions have return types
 		- prettier
 		- form accessibility
+		- stripTextOfDangerousContent
 		- why tools
 			- test
 			- flexibility, e.g. enable user settings, sort order, etc. 
@@ -87,6 +89,7 @@
 		- useContext
 		- date entry: try a sophisticated date control 
 		- body: markdown?
+		- show single page
 		- admin page
 			- two methods of tag selection
 			- A/B test

@@ -22,6 +22,28 @@ export const PageCreateEntry = () => {
 		navigate("/blog");
 	};
 
+	const handleFormChange = (
+		field: string,
+		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+	) => {
+		const value = e.target.value;
+		switch (field) {
+			case "date":
+			case "title":
+			case "body":
+				blogEntry[field] = value;
+				break;
+			case "tags":
+				blogEntry[field] = value.split(" ");
+				break;
+			default:
+				console.log(
+					`BAD FIELD: "${tools.stripTextOfDangerousContent(field)}"`
+				);
+		}
+		setBlogEntry(structuredClone(blogEntry));
+	};
+
 	return (
 		<>
 			<form className="createBlogEntry">
@@ -36,6 +58,7 @@ export const PageCreateEntry = () => {
 								value={blogEntry.date}
 								name="date"
 								id="date"
+								onChange={(e) => handleFormChange("date2", e)}
 							/>
 						</div>
 
@@ -46,6 +69,7 @@ export const PageCreateEntry = () => {
 								value={blogEntry.title}
 								name="title"
 								id="title"
+								onChange={(e) => handleFormChange("title", e)}
 							/>
 						</div>
 
@@ -56,6 +80,7 @@ export const PageCreateEntry = () => {
 								value={blogEntry.tags.join(" ")}
 								name="tags"
 								id="tags"
+								onChange={(e) => handleFormChange("tags", e)}
 							/>
 						</div>
 
@@ -65,6 +90,7 @@ export const PageCreateEntry = () => {
 								spellCheck={false}
 								value={blogEntry.body}
 								className="body"
+								onChange={(e) => handleFormChange("body", e)}
 							></textarea>
 						</div>
 

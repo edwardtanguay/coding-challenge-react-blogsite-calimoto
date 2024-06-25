@@ -10,7 +10,7 @@ export const sortDates = (blogEntries: BlogEntry[]): void => {
 	blogEntries.sort((a, b) => (a.date < b.date ? 1 : -1));
 };
 
-export const generateSuuid = () => {
+export const generateSuuid = (): string => {
 	const characters =
 		"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 	let shortUUID = "";
@@ -26,8 +26,12 @@ export const getBlankBlogEntry = (): BlogEntry => {
 	return {
 		id: tools.generateSuuid(),
 		date: tools.getCurrentDate(),
-		title: "ttt",
-		body: "bbb",
-		tags: ['111', '222'],
+		title: "",
+		body: "",
+		tags: [],
 	};
+};
+
+export const stripTextOfDangerousContent = (input: string): string => {
+	return input.replace(/<[^>]*>/g, "");
 };
