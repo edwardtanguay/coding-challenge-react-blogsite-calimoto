@@ -1,18 +1,22 @@
 import { useContext } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { AppContext } from "../appContext";
-import * as tools from '../tools';
+import * as tools from "../tools";
 
 export const PageBlog = () => {
-	const { blogEntries, handleDeleteBlogEntry } = useContext(AppContext);
+	const { blogEntries, handleDeleteBlogEntry, allTags } =
+		useContext(AppContext);
 
 	return (
 		<>
+			<section className="tagsArea">tags...</section>
 			{blogEntries.map((blogEntry, index) => {
 				return (
 					<div key={index} className="blogEntry">
 						<div className="blogEntryHeader">
-							<div className="date">{tools.getAmericanLongDate(blogEntry.date)}</div>
+							<div className="date">
+								{tools.getAmericanLongDate(blogEntry.date)}
+							</div>
 							<div className="deleteIcon">
 								<FaTrashAlt
 									onClick={() =>

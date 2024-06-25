@@ -43,10 +43,8 @@
 			- x if duplicate
 		- x body
 		- x formIsValid and disable save button
-
-	- .. refactor to SingleBlogEntry
-	- filter:
-		- show all tags als buttons (top)
+	- .. filter:
+		- ..  show all tags als buttons (top)
 		- click on tag
 		- show it as selected
 		- only entries with those tags are shown
@@ -63,7 +61,7 @@
 			- gifs for mobile and computer, etc.
 		- document tools
 		- jest tests
-		
+
 - readme
 	- Prerequisites
 		- Node version

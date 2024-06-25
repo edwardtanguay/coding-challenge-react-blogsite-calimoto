@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { BlogEntry } from "./types";
 import _initialBlogEntries from "./data/blogEntries.json";
 import * as tools from "./tools";
@@ -11,6 +11,7 @@ interface IAppContext {
 	setBlogEntries: (blogEntries: BlogEntry[]) => void;
 	handleDeleteBlogEntry: (blogEntry: BlogEntry) => void;
 	handleSaveNewBlogEntry: (blogEntry: BlogEntry) => void;
+	allTags: string[];
 }
 
 interface IAppProvider {
@@ -22,6 +23,16 @@ export const AppContext = createContext<IAppContext>({} as IAppContext);
 export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	const [blogEntries, setBlogEntries] =
 		useState<BlogEntry[]>(_initialBlogEntries);
+	const [allTags, setAllTags] = useState<string[]>([]);
+
+	const getAllTags = ():string[] => {
+		return ['111', '222', '333'];
+	}
+
+	useEffect(() => {
+		const _allTags = getAllTags();
+		setAllTags(_allTags);
+	}, []);
 
 	const handleDeleteBlogEntry = (blogEntry: BlogEntry): void => {
 		const _blogEntries = blogEntries.filter((m) => m.id !== blogEntry.id);
@@ -41,6 +52,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 				setBlogEntries,
 				handleDeleteBlogEntry,
 				handleSaveNewBlogEntry,
+				allTags
 			}}
 		>
 			{children}
