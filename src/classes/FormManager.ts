@@ -58,12 +58,13 @@ export class FormManager {
 
 	private setDefaultValidationInfo(): void {
 		this.formInfo.date.message = "(enter date)";
-		this.formInfo.title.message = "(enter title)";
 		this.formInfo.tags.message = "(enter tags)";
 	}
 
 	private validate() {
 		this.setDefaultValidationInfo();
+
+		// date
 		if (!tools.isEmpty(this.formInfo.date.value)) {
 			const longDate = tools.getAmericanLongDate(
 				this.formInfo.date.value
@@ -74,6 +75,22 @@ export class FormManager {
 			} else {
 				this.formInfo.date.message = longDate;
 			}
+		}
+
+		// title
+		const tl = this.formInfo.title.value.length;
+		if (tl === 0) {
+			this.formInfo.title.message = "(enter date)";
+			this.formInfo.title.error = "";
+		} else if (tl >= 1 && tl <= 5) {
+			this.formInfo.title.message = "";
+			this.formInfo.title.error = "too short";
+		} else if (tl > 30) {
+			this.formInfo.title.message = "";
+			this.formInfo.title.error = "too long";
+		} else if (tl !== 0) {
+			this.formInfo.title.message = "✓";
+			this.formInfo.title.error = "";
 		}
 	}
 
