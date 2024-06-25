@@ -52,7 +52,13 @@ export const PageCreateEntry = () => {
 
 					<div className="rows">
 						<div className="row">
-							<label htmlFor="date">Date:</label>
+							<div className="rowHeader">
+								<label htmlFor="date">Date</label>
+								<div>
+									<span className="info">iii</span>
+									<span className="error">eee</span>
+								</div>
+							</div>
 							<input
 								type="text"
 								value={formInfo.blogEntry.date}
@@ -63,7 +69,13 @@ export const PageCreateEntry = () => {
 						</div>
 
 						<div className="row">
-							<label htmlFor="title">Title:</label>
+							<div className="rowHeader">
+								<label htmlFor="title">Title</label>
+								<div>
+									<span className="info">iii</span>
+									<span className="error">eee</span>
+								</div>
+							</div>
 							<input
 								type="text"
 								value={formInfo.blogEntry.title}
@@ -74,7 +86,13 @@ export const PageCreateEntry = () => {
 						</div>
 
 						<div className="row">
-							<label htmlFor="tags">Tags:</label>
+							<div className="rowHeader">
+								<label htmlFor="tags">Tags</label>
+								<div>
+									<span className="info">iii</span>
+									<span className="error">eee</span>
+								</div>
+							</div>
 							<input
 								type="text"
 								value={formInfo.blogEntry.tags.join(" ")}
@@ -85,7 +103,13 @@ export const PageCreateEntry = () => {
 						</div>
 
 						<div className="row">
-							<label htmlFor="body">Body:</label>
+							<div className="rowHeader">
+								<label htmlFor="body">Body</label>
+								<div>
+									<span className="info">iii</span>
+									<span className="error">eee</span>
+								</div>
+							</div>
 							<textarea
 								spellCheck={false}
 								value={formInfo.blogEntry.body}

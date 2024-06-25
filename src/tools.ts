@@ -38,10 +38,9 @@ export const getBlankBlogEntry = (): BlogEntry => {
 export const getBlankFormInfo = (): FormInfo => {
 	return {
 		blogEntry: tools.getBlankBlogEntry(),
-		messages: [],
-		errorMessages: []
-
-	}
+		messages: [{ field: "date", text: "ddd" },{ field: "title", text: "ddd" },{ field: "tags", text: "ddd" },{ field: "body", text: "ddd" }],
+		errorMessages: [],
+	};
 };
 
 export const stripTextOfDangerousContent = (input: string): string => {

@@ -8,12 +8,12 @@ export type BlogEntry = {
 
 export type FormError = {
 	field: string,
-	errorMessage: string
+	errorText: string
 }
 
 export type FormMessage = {
 	field: string,
-	message: string
+	text: string
 }
 
 export type FormInfo = {
