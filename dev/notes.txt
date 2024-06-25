@@ -35,8 +35,8 @@
 	- .. createEntryPage: create formData object
 	 	- x add values to form
 		- x save to form with base functionality
-		- .. convert data to motorcycle rides
-		- add minimal validation
+		- x convert data to motorcycle rides
+		- .. add minimal validation
 	- refactor to SingleBlogEntry
 	- filter:
 		- show all tags als buttons (right side)
