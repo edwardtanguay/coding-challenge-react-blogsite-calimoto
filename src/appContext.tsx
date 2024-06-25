@@ -11,6 +11,7 @@ interface IAppContext {
 	blogEntries: BlogEntry[];
 	setBlogEntries: (blogEntries: BlogEntry[]) => void;
 	handleDeleteBlogEntry: (blogEntry: BlogEntry) => void;
+	handleSaveNewBlogEntry: (blogEntry: BlogEntry) => void;
 }
 
 interface IAppProvider {
@@ -28,12 +29,18 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 		setBlogEntries(_blogEntries);
 	};
 
+	const handleSaveNewBlogEntry = (blogEntry: BlogEntry): void => {
+		blogEntries.push(blogEntry);
+		setBlogEntries(structuredClone(blogEntries));
+	};
+
 	return (
 		<AppContext.Provider
 			value={{
 				blogEntries,
 				setBlogEntries,
 				handleDeleteBlogEntry,
+				handleSaveNewBlogEntry
 			}}
 		>
 			{children}

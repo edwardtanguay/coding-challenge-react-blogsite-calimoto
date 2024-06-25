@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { BlogEntry } from "../types";
+import { AppContext } from "../appContext";
+import * as tools from '../tools';
 
 export const PageCreateEntry = () => {
+	const { handleSaveNewBlogEntry } = useContext(AppContext);
 	const navigate = useNavigate();
 
 	const handleCancelForm = (e: React.MouseEvent<HTMLButtonElement>): void => {
 		e.preventDefault();
-		navigate('/blog');
+		navigate("/blog");
 	};
 
 	const handleSaveForm = (e: React.MouseEvent<HTMLButtonElement>): void => {
 		e.preventDefault();
-		navigate('/blog');
+		const blogEntry: BlogEntry = {
+			id: "2837sh",
+			date: tools.getCurrentDate(),
+			title: "ttt",
+			body: "bbb",
+			tags: ["tags"],
+		};
+		handleSaveNewBlogEntry(blogEntry);
+		navigate("/blog");
 	};
 
 	return (
@@ -48,7 +60,9 @@ export const PageCreateEntry = () => {
 							<button onClick={(e) => handleCancelForm(e)}>
 								Cancel
 							</button>
-							<button onClick={(e) => handleSaveForm(e)}>Save</button>
+							<button onClick={(e) => handleSaveForm(e)}>
+								Save
+							</button>
 						</div>
 					</div>
 				</fieldset>

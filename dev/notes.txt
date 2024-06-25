@@ -28,8 +28,8 @@
 	- x making of site
 		x add actual page
 	- x implement useContext with blogEntries
-	- .. move handler
-		- .. mock out handleSaveForm to save a mock blogEntry
+	- x move handler
+	- .. mock out handleSaveForm to save a mock blogEntry
 	- createEntryPage: create formData object
 		- handleSaveForm: save form data to blogEntry
 	- filter:
@@ -52,20 +52,31 @@
 		- mobile, take red off of trashcan
 		- making of
 			- gifs for mobile and computer, etc.
-- version 2
-	- add color: look at some popular design first
-	- react icons
-	- delete: Are you sure? Yes/No
-	- display all as list or single
-	- tags: different colors
-	- tags: like Stack Overflow
-	- useContext
-	- date entry: try a sophisticated date control 
-	- body: markdown?
-	- admin page
-		- two methods of tag selection
-		- A/B test
-	- create page link is a graphic
-	- Zod
-	- modal for create
-	- model for delete yes/no
+- readme
+	- Prerequisites
+		- Node version
+	- Tested
+		- Ubuntu 22.04
+		- Windows 10 
+- making of
+	- note
+		- TypeScript functions have return types
+		- prettier
+	- version 2
+		- add color: look at some popular design first
+		- react icons
+		- delete: Are you sure? Yes/No
+		- display all as list or single
+		- tags: different colors
+		- tags: like Stack Overflow
+		- useContext
+		- date entry: try a sophisticated date control 
+		- body: markdown?
+		- admin page
+			- two methods of tag selection
+			- A/B test
+		- create page link is a graphic
+		- Zod
+		- modal for create
+		- model for delete yes/no
+		- testing
