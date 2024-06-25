@@ -25,6 +25,8 @@
 			- [Cancel] --> Blog
 			- [Save] --> saved --> Blog
 		- x button handlers
+	- .. making of site
+		.. add actual page
 	- implement useContext with blogEntries
 	- mock out handleSaveForm to save a mock blogEntry
 	- createEntryPage: create formData object

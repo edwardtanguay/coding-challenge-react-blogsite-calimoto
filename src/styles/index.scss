@@ -87,9 +87,20 @@ body {
 	body {
 		margin: 1rem;
 
-		h1 {
-			font-size: 1.3rem;
-			margin-bottom: 0.5rem;
+		.pageHeader {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 0.7rem;
+			h1 {
+				font-size: 1.3rem;
+			}
+			a {
+				font-size: 0.8rem;
+				text-decoration: none;
+				color: #555;
+				font-style: italic;
+			}
 		}
 
 		form.createBlogEntry {
@@ -153,9 +164,23 @@ body {
 			background-color: #ddd;
 			padding: 1rem;
 			border-radius: 0.5rem;
-			h1 {
-				font-size: 1.5rem;
-				margin-bottom: 1rem;
+			.pageHeader {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 0.7rem;
+				h1 {
+					font-size: 1.3rem;
+				}
+				a {
+					font-size: 1rem;
+					text-decoration: none;
+					color: #777;
+					font-style: italic;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
 			}
 		}
 
