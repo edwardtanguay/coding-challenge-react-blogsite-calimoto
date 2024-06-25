@@ -23,7 +23,8 @@ body {
 						text-decoration: none;
 						color: #000;
 						&.active {
-							color: navy;
+							color: #000;
+							font-weight: bold;
 						}
 					}
 				}
@@ -87,7 +88,7 @@ body {
 	body {
 		margin: 1rem;
 
-		.pageHeader {
+		.header {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
@@ -99,6 +100,27 @@ body {
 				font-size: 0.8rem;
 				text-decoration: none;
 				color: #555;
+				font-style: italic;
+				&.active {
+					color: #000;
+					font-weight: bold;
+					font-style: normal;
+				}
+			}
+		}
+		.pageMakingOf {
+			a {
+				&.active {
+					color: #000;
+					font-weight: bold;
+				}
+			}
+			h2 {
+				font-size: 1rem;
+				margin-bottom: 0.5rem;
+			}
+			h3 {
+				font-size: 0.8rem;
 				font-style: italic;
 			}
 		}
@@ -164,7 +186,7 @@ body {
 			background-color: #ddd;
 			padding: 1rem;
 			border-radius: 0.5rem;
-			.pageHeader {
+			.header {
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
@@ -177,9 +199,21 @@ body {
 					text-decoration: none;
 					color: #777;
 					font-style: italic;
-					&:hover {
-						text-decoration: underline;
+					&.active {
+						color: #000;
+						font-weight: bold;
+						font-style: normal;
 					}
+				}
+			}
+			.pageMakingOf {
+				h2 {
+					font-size: 1.2rem;
+					margin-bottom: 0.5rem;
+				}
+				h3 {
+					font-size: 0.9rem;
+					font-style: italic;
 				}
 			}
 		}

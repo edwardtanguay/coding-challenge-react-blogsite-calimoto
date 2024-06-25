@@ -1,7 +1,8 @@
 export const PageMakingOf = () => {
 	return (
-		<>
-			<p>making of...</p>
-		</>
+		<section className="pageMakingOf">
+			<h2>Coding Challenge for Calimoto Interview</h2>
+			<h3>By Edward Tanguay</h3>
+		</section>
 	);
 };

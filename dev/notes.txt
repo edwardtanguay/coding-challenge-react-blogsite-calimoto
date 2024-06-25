@@ -46,6 +46,9 @@
 	- 100% mobile
 		- tag area is a dropdown
 		- (check on phone)
+	- todo
+		- all pages are sections
+		- mobile, take red off of trashcan
 - version 2
 	- add color: look at some popular design first
 	- react icons

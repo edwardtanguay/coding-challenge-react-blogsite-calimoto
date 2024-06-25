@@ -1,11 +1,16 @@
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
+import {
+	createBrowserRouter,
+	Navigate,
+	RouterProvider,
+} from "react-router-dom";
 import "./styles/reset.scss";
 import "./styles/index.scss";
 import { Page404 } from "./pages/Page404.tsx";
 import { PageBlog } from "./pages/PageBlog.tsx";
 import { PageCreateEntry } from "./pages/PageCreateEntry.tsx";
+import { PageMakingOf } from "./pages/PageMakingOf.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -15,11 +20,15 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: "/blog",
-				element: <PageBlog/>
+				element: <PageBlog />,
 			},
 			{
 				path: "create-entry",
-				element: <PageCreateEntry/>
+				element: <PageCreateEntry />,
+			},
+			{
+				path: "making-of",
+				element: <PageMakingOf />,
 			},
 			{
 				path: "/",
