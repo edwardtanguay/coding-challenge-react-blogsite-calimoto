@@ -1,12 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { BlogEntry } from "../types";
+import { BlogEntry} from "../types";
 import { AppContext } from "../appContext";
 import * as tools from '../tools';
 
 export const PageCreateEntry = () => {
 	const { handleSaveNewBlogEntry } = useContext(AppContext);
 	const navigate = useNavigate();
+	const [ formBlogEntry, setFormBlogEntry ] = useState<BlogEntry>(tools.getBlankBlogEntry());
 
 	const handleCancelForm = (e: React.MouseEvent<HTMLButtonElement>): void => {
 		e.preventDefault();
@@ -15,14 +16,7 @@ export const PageCreateEntry = () => {
 
 	const handleSaveForm = (e: React.MouseEvent<HTMLButtonElement>): void => {
 		e.preventDefault();
-		const blogEntry: BlogEntry = {
-			id: tools.generateSuuid(),
-			date: tools.getCurrentDate(),
-			title: "ttt",
-			body: "bbb",
-			tags: ["tags"],
-		};
-		handleSaveNewBlogEntry(blogEntry);
+		handleSaveNewBlogEntry(formBlogEntry);
 		navigate("/blog");
 	};
 

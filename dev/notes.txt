@@ -31,9 +31,10 @@
 	- x move handler
 	- x mock out handleSaveForm to save a mock blogEntry
 		- x resort
-	- .. createSuuid
-	- createEntryPage: create formData object
-		- handleSaveForm: save form data to blogEntry
+	- x createSuuid
+	- .. createEntryPage: create formData object
+		- .. save to form with base functionality
+		- add minimal validation
 	- filter:
 		- show all tags als buttons (right side)
 		- click on tag

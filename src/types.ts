@@ -4,4 +4,4 @@ export type BlogEntry = {
 	title: string;
 	body: string;
 	tags: string[];
-}
+};

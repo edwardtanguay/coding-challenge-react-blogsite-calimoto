@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import { BlogEntry } from "./types";
+import * as tools from "./tools.ts";
 
 export const getCurrentDate = (): string => {
 	return dayjs().format("YYYY-MM-DD");
@@ -19,4 +20,14 @@ export const generateSuuid = () => {
 		shortUUID += characters.charAt(randomIndex);
 	}
 	return shortUUID;
+};
+
+export const getBlankBlogEntry = (): BlogEntry => {
+	return {
+		id: tools.generateSuuid(),
+		date: tools.getCurrentDate(),
+		title: "",
+		body: "",
+		tags: [],
+	};
 };
