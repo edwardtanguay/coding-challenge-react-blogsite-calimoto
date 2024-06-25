@@ -57,7 +57,6 @@ export class FormManager {
 	}
 
 	private setDefaultValidationInfo(): void {
-		this.formInfo.date.message = "(enter date)";
 		this.formInfo.tags.message = "(enter tags)";
 	}
 
@@ -65,7 +64,10 @@ export class FormManager {
 		this.setDefaultValidationInfo();
 
 		// date
-		if (!tools.isEmpty(this.formInfo.date.value)) {
+		if (tools.isEmpty(this.formInfo.date.value)) {
+			this.formInfo.date.message = "(enter date)";
+			this.formInfo.date.error = "";
+		} else if (!tools.isEmpty(this.formInfo.date.value)) {
 			const longDate = tools.getAmericanLongDate(
 				this.formInfo.date.value
 			);
@@ -74,6 +76,7 @@ export class FormManager {
 				this.formInfo.date.error = "invalid format";
 			} else {
 				this.formInfo.date.message = longDate;
+				this.formInfo.date.error = "";
 			}
 		}
 
