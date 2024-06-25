@@ -254,13 +254,32 @@ body {
 						display: flex;
 						flex-direction: column;
 						gap: 0.2rem;
-						label {
-							font-size: 0.8rem;
+						.rowHeader {
+							display: flex;
+							align-items: center;
+							justify-content: space-between;
+							label {
+								font-size: 0.8rem;
+							}
+							div {
+								span.message {
+									color: #666;
+									font-size: 0.8rem;
+								}
+								span.error {
+									color: brown;
+									font-style: italic;
+									font-size: 0.8rem;
+								}
+							}
 						}
 						input {
 							width: 98%;
 							font-size: 1.1rem;
 							font-family: monospace;
+							&:focus {
+								outline: 1px solid #999;
+							}
 						}
 
 						textarea.body {

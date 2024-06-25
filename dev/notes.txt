@@ -32,18 +32,18 @@
 	- x mock out handleSaveForm to save a mock blogEntry
 		- x resort
 	- x createSuuid
-	- .. createEntryPage: create formData object
+	- x createEntryPage: create formData object
 	 	- x add values to form
 		- x save to form with base functionality
 		- x convert data to motorcycle rides
 		- x fix display dates
 		- x add minimal validation
-	- .. all validate
+	- x all validate
 		- x tags
 			- x if duplicate
 		- x body
-		- .. formIsValid and disable save button
-	- refactor to SingleBlogEntry
+		- x formIsValid and disable save button
+	- .. refactor to SingleBlogEntry
 	- filter:
 		- show all tags als buttons (right side)
 		- click on tag
