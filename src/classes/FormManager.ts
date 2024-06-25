@@ -56,13 +56,7 @@ export class FormManager {
 		};
 	}
 
-	private setDefaultValidationInfo(): void {
-		this.formInfo.tags.message = "(enter tags)";
-	}
-
 	private validate() {
-		this.setDefaultValidationInfo();
-
 		// date
 		if (tools.isEmpty(this.formInfo.date.value)) {
 			this.formInfo.date.message = "(enter date)";
@@ -83,7 +77,7 @@ export class FormManager {
 		// title
 		const tl = this.formInfo.title.value.length;
 		if (tl === 0) {
-			this.formInfo.title.message = "(enter date)";
+			this.formInfo.title.message = "(enter title)";
 			this.formInfo.title.error = "";
 		} else if (tl >= 1 && tl <= 5) {
 			this.formInfo.title.message = "";
@@ -95,6 +89,18 @@ export class FormManager {
 			this.formInfo.title.message = "✓";
 			this.formInfo.title.error = "";
 		}
+		
+		// tags
+		const tgl = this.formInfo.tags.value.length;
+		console.log(222, tgl);
+		if (tgl === 0) {
+			this.formInfo.tags.message = "(enter tags)";
+			this.formInfo.tags.error = "";
+		} else {
+			this.formInfo.tags.message = "✓";
+			this.formInfo.tags.error = "";
+		}
+
 	}
 
 	public getFormInfo(): FormInfo {

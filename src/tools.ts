@@ -31,7 +31,6 @@ export const stripTextOfDangerousContent = (input: string): string => {
 
 export const getAmericanLongDate = (date: string): string => {
 	if (tools.isValidIsoDateFormat(date)) {
-		console.log(111, `${date} is valid`);
 		return dayjs(date).format("ddd, MMM D, YYYY");
 	} else {
 		return "";
