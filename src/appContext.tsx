@@ -25,9 +25,15 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 		useState<BlogEntry[]>(_initialBlogEntries);
 	const [allTags, setAllTags] = useState<string[]>([]);
 
-	const getAllTags = ():string[] => {
-		return ['111', '222', '333'];
-	}
+	const getAllTags = (): string[] => {
+		const tags: string[] = [];
+		for (const blogEntry of blogEntries) {
+			tags.push(...blogEntry.tags);
+		}
+		const uniqueTags = Array.from(new Set(tags));
+		uniqueTags.sort((a, b) => (a > b ? 1 : -1));
+		return uniqueTags;
+	};
 
 	useEffect(() => {
 		const _allTags = getAllTags();
@@ -52,7 +58,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 				setBlogEntries,
 				handleDeleteBlogEntry,
 				handleSaveNewBlogEntry,
-				allTags
+				allTags,
 			}}
 		>
 			{children}
