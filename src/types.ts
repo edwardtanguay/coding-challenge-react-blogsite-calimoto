@@ -2,22 +2,30 @@ export type BlogEntry = {
 	id: string;
 	date: string;
 	title: string;
-	body: string;
 	tags: string[];
+	body: string;
 };
 
-export type FormError = {
-	field: string,
-	errorText: string
-}
-
-export type FormMessage = {
-	field: string,
-	text: string
-}
-
 export type FormInfo = {
-	blogEntry: BlogEntry,
-	messages: FormMessage[],
-	errorMessages: FormError[]
-}
+	id: string;
+	date: {
+		value: string;
+		message: string;
+		error: string;
+	};
+	title: {
+		value: string;
+		message: string;
+		error: string;
+	};
+	tags: {
+		value: string[];
+		message: string;
+		error: string;
+	};
+	body: {
+		value: string;
+		message: string;
+		error: string;
+	};
+};

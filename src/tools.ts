@@ -1,6 +1,5 @@
 import dayjs from "dayjs";
-import { BlogEntry, FormInfo } from "./types";
-import * as tools from "./tools.ts";
+import { BlogEntry} from "./types";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 
 dayjs.extend(advancedFormat);
@@ -23,24 +22,6 @@ export const generateSuuid = (): string => {
 		shortUUID += characters.charAt(randomIndex);
 	}
 	return shortUUID;
-};
-
-export const getBlankBlogEntry = (): BlogEntry => {
-	return {
-		id: tools.generateSuuid(),
-		date: tools.getCurrentDate(),
-		title: "",
-		body: "",
-		tags: [],
-	};
-};
-
-export const getBlankFormInfo = (): FormInfo => {
-	return {
-		blogEntry: tools.getBlankBlogEntry(),
-		messages: [{ field: "date", text: "ddd" },{ field: "title", text: "ddd" },{ field: "tags", text: "ddd" },{ field: "body", text: "ddd" }],
-		errorMessages: [],
-	};
 };
 
 export const stripTextOfDangerousContent = (input: string): string => {

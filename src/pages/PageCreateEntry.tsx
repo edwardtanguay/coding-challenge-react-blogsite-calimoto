@@ -3,13 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { AppContext } from "../appContext";
 import * as tools from "../tools";
 import { FormInfo } from "../types";
+import { FormManager } from "../classes/FormManager";
 
 export const PageCreateEntry = () => {
 	const { handleSaveNewBlogEntry } = useContext(AppContext);
 	const navigate = useNavigate();
-	const [formInfo, setFormInfo] = useState<FormInfo>(
-		tools.getBlankFormInfo()
-	);
+	const [formInfo, setFormInfo] = useState<FormInfo>(FormManager.getBlankFormInfo());
 
 	const handleCancelForm = (e: React.MouseEvent<HTMLButtonElement>): void => {
 		e.preventDefault();
@@ -18,7 +17,8 @@ export const PageCreateEntry = () => {
 
 	const handleSaveForm = (e: React.MouseEvent<HTMLButtonElement>): void => {
 		e.preventDefault();
-		handleSaveNewBlogEntry(formInfo.blogEntry);
+		const formManager = new FormManager(formInfo);
+		handleSaveNewBlogEntry(formManager.getBlogEntry());
 		navigate("/blog");
 	};
 
@@ -31,17 +31,18 @@ export const PageCreateEntry = () => {
 			case "date":
 			case "title":
 			case "body":
-				formInfo.blogEntry[field] = value;
+				formInfo[field].value = value;
 				break;
 			case "tags":
-				formInfo.blogEntry[field] = value.split(" ");
+				formInfo.tags.value = value.split(" ");
 				break;
 			default:
 				console.log(
 					`BAD FIELD: "${tools.stripTextOfDangerousContent(field)}"`
 				);
 		}
-		setFormInfo(structuredClone(formInfo));
+		const formManager = new FormManager(formInfo);
+		setFormInfo(structuredClone(formManager.getFormInfo()));
 	};
 
 	return (
@@ -61,7 +62,7 @@ export const PageCreateEntry = () => {
 							</div>
 							<input
 								type="text"
-								value={formInfo.blogEntry.date}
+								value={formInfo.date.value}
 								name="date"
 								id="date"
 								onChange={(e) => handleFormChange("date", e)}
@@ -78,7 +79,7 @@ export const PageCreateEntry = () => {
 							</div>
 							<input
 								type="text"
-								value={formInfo.blogEntry.title}
+								value={formInfo.title.value}
 								name="title"
 								id="title"
 								onChange={(e) => handleFormChange("title", e)}
@@ -95,7 +96,7 @@ export const PageCreateEntry = () => {
 							</div>
 							<input
 								type="text"
-								value={formInfo.blogEntry.tags.join(" ")}
+								value={formInfo.tags.value.join(" ")}
 								name="tags"
 								id="tags"
 								onChange={(e) => handleFormChange("tags", e)}
@@ -112,7 +113,7 @@ export const PageCreateEntry = () => {
 							</div>
 							<textarea
 								spellCheck={false}
-								value={formInfo.blogEntry.body}
+								value={formInfo.body.value}
 								className="body"
 								onChange={(e) => handleFormChange("body", e)}
 							></textarea>
