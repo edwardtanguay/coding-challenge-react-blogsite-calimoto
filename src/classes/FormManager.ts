@@ -33,6 +33,7 @@ export class FormManager {
 	private getBlankFormInfo(): FormInfo {
 		return {
 			id: "",
+			formIsValid: false,
 			date: {
 				value: "",
 				message: "",

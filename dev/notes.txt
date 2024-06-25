@@ -39,8 +39,10 @@
 		- x fix display dates
 		- x add minimal validation
 	- .. all validate
-		- .. tags
-			- if duplicate
+		- x tags
+			- x if duplicate
+		- x body
+		- .. formIsValid and disable save button
 	- refactor to SingleBlogEntry
 	- filter:
 		- show all tags als buttons (right side)

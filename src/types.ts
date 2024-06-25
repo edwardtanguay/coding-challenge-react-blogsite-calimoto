@@ -8,6 +8,7 @@ export type BlogEntry = {
 
 export type FormInfo = {
 	id: string;
+	formIsValid: boolean;
 	date: {
 		value: string;
 		message: string;

@@ -139,7 +139,7 @@ export const PageCreateEntry = () => {
 							<button onClick={(e) => handleCancelForm(e)}>
 								Cancel
 							</button>
-							<button onClick={(e) => handleSaveForm(e)}>
+							<button disabled={!formInfo.formIsValid} onClick={(e) => handleSaveForm(e)}>
 								Save
 							</button>
 						</div>
