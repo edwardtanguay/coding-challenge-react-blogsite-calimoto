@@ -29,7 +29,7 @@
 		x add actual page
 	- .. implement useContext with blogEntries
 		- ..
-	- mock out handleSaveForm to save a mock blogEntry
+		- mock out handleSaveForm to save a mock blogEntry
 	- createEntryPage: create formData object
 		- handleSaveForm: save form data to blogEntry
 	- filter:
