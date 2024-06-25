@@ -26,8 +26,8 @@ export const getBlankBlogEntry = (): BlogEntry => {
 	return {
 		id: tools.generateSuuid(),
 		date: tools.getCurrentDate(),
-		title: "",
-		body: "",
-		tags: [],
+		title: "ttt",
+		body: "bbb",
+		tags: ['111', '222'],
 	};
 };

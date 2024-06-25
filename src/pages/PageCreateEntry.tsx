@@ -1,13 +1,15 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { BlogEntry} from "../types";
+import { BlogEntry } from "../types";
 import { AppContext } from "../appContext";
-import * as tools from '../tools';
+import * as tools from "../tools";
 
 export const PageCreateEntry = () => {
 	const { handleSaveNewBlogEntry } = useContext(AppContext);
 	const navigate = useNavigate();
-	const [ formBlogEntry, setFormBlogEntry ] = useState<BlogEntry>(tools.getBlankBlogEntry());
+	const [blogEntry, setBlogEntry] = useState<BlogEntry>(
+		tools.getBlankBlogEntry()
+	);
 
 	const handleCancelForm = (e: React.MouseEvent<HTMLButtonElement>): void => {
 		e.preventDefault();
@@ -16,7 +18,7 @@ export const PageCreateEntry = () => {
 
 	const handleSaveForm = (e: React.MouseEvent<HTMLButtonElement>): void => {
 		e.preventDefault();
-		handleSaveNewBlogEntry(formBlogEntry);
+		handleSaveNewBlogEntry(blogEntry);
 		navigate("/blog");
 	};
 
@@ -29,23 +31,39 @@ export const PageCreateEntry = () => {
 					<div className="rows">
 						<div className="row">
 							<label htmlFor="date">Date:</label>
-							<input type="text" name="date" id="date" />
+							<input
+								type="text"
+								value={blogEntry.date}
+								name="date"
+								id="date"
+							/>
 						</div>
 
 						<div className="row">
 							<label htmlFor="title">Title:</label>
-							<input type="text" name="title" id="title" />
+							<input
+								type="text"
+								value={blogEntry.title}
+								name="title"
+								id="title"
+							/>
 						</div>
 
 						<div className="row">
 							<label htmlFor="tags">Tags:</label>
-							<input type="text" name="tags" id="tags" />
+							<input
+								type="text"
+								value={blogEntry.tags.join(" ")}
+								name="tags"
+								id="tags"
+							/>
 						</div>
 
 						<div className="row">
 							<label htmlFor="body">Body:</label>
 							<textarea
 								spellCheck={false}
+								value={blogEntry.body}
 								className="body"
 							></textarea>
 						</div>

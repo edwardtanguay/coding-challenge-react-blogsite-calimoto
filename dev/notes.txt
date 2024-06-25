@@ -33,6 +33,7 @@
 		- x resort
 	- x createSuuid
 	- .. createEntryPage: create formData object
+	 	- .. add values to form
 		- .. save to form with base functionality
 		- add minimal validation
 	- filter:
