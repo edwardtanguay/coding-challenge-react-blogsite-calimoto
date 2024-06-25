@@ -74,6 +74,7 @@
 		- purposely kept a minimal design (shades of gray)
 		- TypeScript functions have return types
 		- prettier
+		- FormManager: example of OOP
 		- form accessibility
 		- stripTextOfDangerousContent
 		- why tools
