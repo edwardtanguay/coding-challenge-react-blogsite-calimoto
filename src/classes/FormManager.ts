@@ -125,6 +125,51 @@ export class FormManager {
 			this.formInfo.body.error = "";
 		}
 
+		this.validateForm();
+
+	}
+
+	private formHasAnError(): boolean {
+		if (!tools.isEmpty(this.formInfo.date.error)) {
+			return true;
+		}
+		if (!tools.isEmpty(this.formInfo.title.error)) {
+			return true;
+		}
+		if (!tools.isEmpty(this.formInfo.tags.error)) {
+			return true;
+		}
+		if (!tools.isEmpty(this.formInfo.body.error)) {
+			return true;
+		}
+		return false;
+	}
+
+	private formHasAnEmptyValue(): boolean {
+		if (tools.isEmpty(this.formInfo.date.value)) {
+			return true;
+		}
+		if (tools.isEmpty(this.formInfo.title.value)) {
+			return true;
+		}
+		if (tools.isEmpty(this.formInfo.tags.value)) {
+			return true;
+		}
+		if (tools.isEmpty(this.formInfo.body.value)) {
+			return true;
+		}
+		return false;
+	}
+
+	private validateForm(): void {
+		let valid = true;
+		if (this.formHasAnError()) {
+			valid = false;
+		}
+		if (this.formHasAnEmptyValue()) {
+			valid = false;
+		}
+		this.formInfo.formIsValid = valid;	
 	}
 
 	public getFormInfo(): FormInfo {
