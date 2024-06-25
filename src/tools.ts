@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
-import { BlogEntry} from "./types";
+import { BlogEntry } from "./types";
 import advancedFormat from "dayjs/plugin/advancedFormat";
+import * as tools from "./tools";
 
 dayjs.extend(advancedFormat);
 
@@ -29,5 +30,37 @@ export const stripTextOfDangerousContent = (input: string): string => {
 };
 
 export const getAmericanLongDate = (date: string): string => {
-	return dayjs(date).format("ddd, MMM D, YYYY");
+	if (tools.isValidIsoDateFormat(date)) {
+		console.log(111, `${date} is valid`);
+		return dayjs(date).format("ddd, MMM D, YYYY");
+	} else {
+		return "";
+	}
+};
+
+export const isEmpty = (text: string): boolean => {
+	return text.trim() === "";
+};
+
+export const OLDisValidIsoDateFormat = (date: string): boolean => {
+	const format = "YYYY-MM-DD";
+	return dayjs(date, format, true).isValid();
+};
+
+export const isValidIsoDateFormat = (date: string): boolean => {
+	const regex =
+		/^(?:(?:19|20)\d{2})-(?:(?:0[1-9]|1[0-2]))-(?:(?:0[1-9]|1\d|2\d|3[01]))$/;
+	if (!regex.test(date)) {
+		return false;
+	}
+
+	// Further validation for actual date values using Date object
+	const d = new Date(date);
+	const [year, month, day] = date.split("-").map(Number);
+
+	return (
+		d.getFullYear() === year &&
+		d.getMonth() + 1 === month &&
+		d.getDate() === day
+	);
 };

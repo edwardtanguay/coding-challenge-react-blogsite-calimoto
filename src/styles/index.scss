@@ -148,7 +148,7 @@ body {
 						.rowHeader {
 							display: flex;
 							align-items: center;
-							justify-content:space-between;
+							justify-content: space-between;
 							label {
 								font-size: 0.8rem;
 							}
@@ -167,6 +167,9 @@ body {
 							width: 98%;
 							font-size: 1.1rem;
 							font-family: monospace;
+							&:focus {
+								outline: 1px solid #999;
+							}
 						}
 
 						textarea.body {

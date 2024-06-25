@@ -5,12 +5,12 @@ export class FormManager {
 	private formInfo: FormInfo;
 
 	constructor(formInfo: FormInfo | null = null) {
-			this.formInfo = this.getBlankFormInfo(); 
+		this.formInfo = this.getBlankFormInfo();
 		if (formInfo === null) {
 			this.getValuesFromBlogEntry(FormManager.getDefaultBlogEntry());
 		} else {
 			this.addBlogEntryInfo(formInfo);
-		} 
+		}
 		this.validate();
 	}
 
@@ -20,7 +20,7 @@ export class FormManager {
 		this.formInfo.title.value = formInfo.title.value;
 		this.formInfo.tags.value = structuredClone(formInfo.tags.value);
 		this.formInfo.body.value = formInfo.body.value;
-	} 
+	};
 
 	private getValuesFromBlogEntry(blogEntry: BlogEntry) {
 		this.formInfo.id = blogEntry.id;
@@ -30,34 +30,51 @@ export class FormManager {
 		this.formInfo.body.value = blogEntry.body;
 	}
 
-	private getBlankFormInfo():FormInfo {
+	private getBlankFormInfo(): FormInfo {
 		return {
-			id: '',
+			id: "",
 			date: {
-				value: '',
-				message: '',
-				error: ''
+				value: "",
+				message: "",
+				error: "",
 			},
 			title: {
-				value: '',
-				message: '',
-				error: ''
+				value: "",
+				message: "",
+				error: "",
 			},
 			tags: {
 				value: [],
-				message: '',
-				error: ''
+				message: "",
+				error: "",
 			},
 			body: {
-				value: '',
-				message: '',
-				error: ''
-			}
-		}
+				value: "",
+				message: "",
+				error: "",
+			},
+		};
+	}
+
+	private setDefaultValidationInfo(): void {
+		this.formInfo.date.message = "(enter date)";
+		this.formInfo.title.message = "(enter title)";
+		this.formInfo.tags.message = "(enter tags)";
 	}
 
 	private validate() {
-		this.formInfo.title.message = "type in title";
+		this.setDefaultValidationInfo();
+		if (!tools.isEmpty(this.formInfo.date.value)) {
+			const longDate = tools.getAmericanLongDate(
+				this.formInfo.date.value
+			);
+			if (tools.isEmpty(longDate)) {
+				this.formInfo.date.message = "";
+				this.formInfo.date.error = "invalid format";
+			} else {
+				this.formInfo.date.message = longDate;
+			}
+		}
 	}
 
 	public getFormInfo(): FormInfo {
