@@ -4,35 +4,35 @@
 		"date": "2024-05-01",
 		"title": "Scenic Ride Through the Alps",
 		"body": "Today, I embarked on a scenic ride through the majestic Alps. The breathtaking landscapes and winding roads offered an exhilarating experience. The crisp mountain air and the solitude of the open road made this ride unforgettable. It's amazing how such an adventure can set a positive tone for the entire trip.",
-		"tags": ["motorcycle", "alps", "adventure"]
+		"tags": ["advanced", "germany", "alps"]
 	},
 	{
 		"id": "82Khsk",
 		"date": "2024-05-22",
 		"title": "Exploring the Countryside of Tuscany",
 		"body": "I've started exploring the beautiful countryside of Tuscany on my motorcycle. It's not just about the ride, but about experiencing the serene beauty of the rolling hills and vineyards. I feel more connected to the landscape and the culture. It's surprising how much joy and relaxation you can find when you immerse yourself in such a picturesque environment.",
-		"tags": ["motorcycle", "tuscany", "exploration"]
+		"tags": ["beginner", "italy", "exploration"]
 	},
 	{
 		"id": "63Lkdm",
 		"date": "2024-06-15",
 		"title": "Cruising Along the French Riviera",
 		"body": "The French Riviera offers some of the most stunning coastal roads for a motorcycle ride. The azure waters, charming towns, and beautiful beaches provide a perfect backdrop for an unforgettable journey. The mix of sun, sea, and winding roads is simply exhilarating.",
-		"tags": ["motorcycle", "french riviera", "coastal ride"]
+		"tags": ["intermediate", "france", "coastal"]
 	},
 	{
 		"id": "74Hjko",
-		"date": "2024-07-05",
+		"date": "2024-06-05",
 		"title": "Discovering the Highlands of Scotland",
 		"body": "Riding through the rugged Highlands of Scotland is a breathtaking experience. The dramatic landscapes, ancient castles, and serene lochs make for an adventurous and picturesque journey. Every turn reveals a new, awe-inspiring view.",
-		"tags": ["motorcycle", "scotland", "highlands"]
+		"tags": ["advanced", "scotland", "highlands"]
 	},
 	{
 		"id": "85Lplw",
-		"date": "2024-08-20",
+		"date": "2024-06-20",
 		"title": "Journey Through the Black Forest in Germany",
 		"body": "The Black Forest in Germany offers dense woods, quaint villages, and winding roads perfect for a motorcycle ride. The blend of natural beauty and cultural heritage creates a unique and enriching experience. It's a fantastic escape into nature.",
-		"tags": ["motorcycle", "black forest", "germany"]
+		"tags": ["beginner", "blackforest", "germany"]
 	}
 ]
 

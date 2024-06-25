@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { AppContext } from "../appContext";
+import * as tools from '../tools';
 
 export const PageBlog = () => {
 	const { blogEntries, handleDeleteBlogEntry } = useContext(AppContext);
@@ -11,7 +12,7 @@ export const PageBlog = () => {
 				return (
 					<div key={index} className="blogEntry">
 						<div className="blogEntryHeader">
-							<div className="date">{blogEntry.date}</div>
+							<div className="date">{tools.getAmericanLongDate(blogEntry.date)}</div>
 							<div className="deleteIcon">
 								<FaTrashAlt
 									onClick={() =>

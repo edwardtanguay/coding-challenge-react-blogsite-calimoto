@@ -1,6 +1,9 @@
 import dayjs from "dayjs";
 import { BlogEntry } from "./types";
 import * as tools from "./tools.ts";
+import advancedFormat from "dayjs/plugin/advancedFormat";
+
+dayjs.extend(advancedFormat);
 
 export const getCurrentDate = (): string => {
 	return dayjs().format("YYYY-MM-DD");
@@ -34,4 +37,8 @@ export const getBlankBlogEntry = (): BlogEntry => {
 
 export const stripTextOfDangerousContent = (input: string): string => {
 	return input.replace(/<[^>]*>/g, "");
+};
+
+export const getAmericanLongDate = (date: string): string => {
+	return dayjs(date).format("ddd, MMM D, YYYY");
 };

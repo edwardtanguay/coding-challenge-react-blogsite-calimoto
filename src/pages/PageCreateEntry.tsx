@@ -58,7 +58,7 @@ export const PageCreateEntry = () => {
 								value={blogEntry.date}
 								name="date"
 								id="date"
-								onChange={(e) => handleFormChange("date2", e)}
+								onChange={(e) => handleFormChange("date", e)}
 							/>
 						</div>
 

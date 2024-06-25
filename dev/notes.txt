@@ -36,6 +36,7 @@
 	 	- x add values to form
 		- x save to form with base functionality
 		- x convert data to motorcycle rides
+		- .. fix display dates
 		- .. add minimal validation
 	- refactor to SingleBlogEntry
 	- filter:
