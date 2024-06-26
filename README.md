@@ -1,6 +1,9 @@
-# vite-react-menu-createbrowserrouter
+# Coding Challenge for Calimoto
+## By Edward Tanguay, June 2024
 
-![282296992-671b5714-905c-4356-8803-6b71896a6580](https://github.com/edwardtanguay/vite-react-menu-createbrowserrouter/assets/446574/0f0b1b83-5d93-4822-80b0-af27406a621b)
+This application is a coding challenge that I created for the company Calimoto.
+
+![reactccdemo](https://github.com/edwardtanguay/coding-challenge-react-blogsite-calimoto/assets/446574/d0c97f1b-567b-4b31-a437-acffc4196d14)
 
 ## features
 
@@ -9,7 +12,7 @@
 - React Router 6.4 with createBrowserRouter
 - TypeScript
 - Sass
-- Tailwind
+- day.js
 - ESLint
 - Prettier
 
