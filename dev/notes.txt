@@ -94,6 +94,8 @@
 		- suuid
 		- how to use tools, gif
 	- version 2
+		- edge cases of 0 entries and 1 entry are handled elegantly
+		- refactore into smaller components, e.g. PageBlog.tsx
 		- add color: look at some popular design first
 		- delete: Are you sure? Yes/No
 		- display all as list or single

@@ -15,73 +15,92 @@ export const PageBlog = () => {
 
 	return (
 		<>
-			<section className="tagsArea">
+			{allBlogEntries.length === 0 ? (
+				<p>There are currently no entries, please create one.</p>
+			) : (
 				<>
-					{allTags.map((tag, index) => {
-						return (
-							<button
-								className={
-									selectedMainTag === tag
-										? "selected"
-										: "notSelected"
-								}
-								onClick={() => handleMainTagClick(tag)}
-								key={index}
-							>
-								{tag}
-							</button>
-						);
-					})}
-					<button
-						className={`showAll ${
-							selectedMainTag === "" ? "selected" : "notSelected"
-						}`}
-						onClick={() => handleMainTagClick("")}
-					>
-						show all tags
-					</button>
-				</>
-			</section>
-			<section className="stats">
-				Showing {filteredBlogEntries.length} of {allBlogEntries.length}
-			</section>
-			{filteredBlogEntries.map((blogEntry, index) => {
-				return (
-					<div key={index} className="blogEntry">
-						<div className="blogEntryHeader">
-							<div className="date">
-								{tools.getAmericanLongDate(blogEntry.date)}
-							</div>
-							<div className="deleteIcon">
-								<FaTrashAlt
-									onClick={() =>
-										handleDeleteBlogEntry(blogEntry)
-									}
-								/>
-							</div>
-						</div>
-						<div className="title">{blogEntry.title}</div>
-						<div className="tags">
-							{blogEntry.tags.map((tag, index) => {
-								return (
+					{allBlogEntries.length !== 1 && (
+						<>
+							<section className="tagsArea">
+								<>
+									{allTags.map((tag, index) => {
+										return (
+											<button
+												className={
+													selectedMainTag === tag
+														? "selected"
+														: "notSelected"
+												}
+												onClick={() =>
+													handleMainTagClick(tag)
+												}
+												key={index}
+											>
+												{tag}
+											</button>
+										);
+									})}
 									<button
-										className={
-											selectedMainTag === tag
+										className={`showAll ${
+											selectedMainTag === ""
 												? "selected"
 												: "notSelected"
-										}
-										key={index}
-										onClick={() => handleMainTagClick(tag)}
+										}`}
+										onClick={() => handleMainTagClick("")}
 									>
-										{tag}
+										show all tags
 									</button>
-								);
-							})}
-						</div>
-						<div className="body">{blogEntry.body}</div>
-					</div>
-				);
-			})}
+								</>
+							</section>
+							<section className="stats">
+								Showing {filteredBlogEntries.length} of{" "}
+								{allBlogEntries.length}
+							</section>
+						</>
+					)}
+					{filteredBlogEntries.map((blogEntry, index) => {
+						return (
+							<div key={index} className="blogEntry">
+								<div className="blogEntryHeader">
+									<div className="date">
+										{tools.getAmericanLongDate(
+											blogEntry.date
+										)}
+									</div>
+									<div className="deleteIcon">
+										<FaTrashAlt
+											onClick={() =>
+												handleDeleteBlogEntry(blogEntry)
+											}
+										/>
+									</div>
+								</div>
+								<div className="title">{blogEntry.title}</div>
+								<div className="tags">
+									{blogEntry.tags.map((tag, index) => {
+										return (
+											<button
+												className={
+													selectedMainTag === tag
+														? "selected"
+														: "notSelected"
+												}
+												key={index}
+												onClick={() =>
+													handleMainTagClick(tag)
+												}
+											>
+												{tag}
+											</button>
+										);
+									})}
+								</div>
+								<div className="body">{blogEntry.body}</div>
+							</div>
+						);
+					})}
+				</>
+			)}
 		</>
 	);
 };
