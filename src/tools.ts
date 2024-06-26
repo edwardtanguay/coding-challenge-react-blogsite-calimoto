@@ -5,6 +5,13 @@ import * as tools from "./tools";
 
 dayjs.extend(advancedFormat);
 
+/**
+ * Returns today's date in ISO format.
+ *
+ * getCurrentDate()
+ *
+ * '2024-06-26'
+ */
 export const getCurrentDate = (): string => {
 	return dayjs().format("YYYY-MM-DD");
 };
