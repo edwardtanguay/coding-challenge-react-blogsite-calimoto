@@ -44,7 +44,7 @@
 		- x body
 		- x formIsValid and disable save button
 	- .. filter:
-		- ..  show all tags als buttons (top)
+		- x show all tags als buttons (top)
 		- click on tag
 		- show it as selected
 		- only entries with those tags are shown

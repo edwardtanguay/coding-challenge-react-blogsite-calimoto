@@ -11,11 +11,9 @@ export const PageBlog = () => {
 		<>
 			<section className="tagsArea">
 				{allTags.map((tag, index) => {
-					return (
-						<button key={index}>{tag}</button>
-					)
+					return <button key={index}>{tag}</button>;
 				})}
-					</section>
+			</section>
 			{blogEntries.map((blogEntry, index) => {
 				return (
 					<div key={index} className="blogEntry">
@@ -32,7 +30,11 @@ export const PageBlog = () => {
 							</div>
 						</div>
 						<div className="title">{blogEntry.title}</div>
-						<div className="tags">{blogEntry.tags.join(" ")}</div>
+						<div className="tags">
+							{blogEntry.tags.map((tag, index) => {
+								return <button key={index}>{tag}</button>;
+							})}
+						</div>
 						<div className="body">{blogEntry.body}</div>
 					</div>
 				);
