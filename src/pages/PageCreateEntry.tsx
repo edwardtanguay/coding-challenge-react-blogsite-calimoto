@@ -25,7 +25,8 @@ export const PageCreateEntry = () => {
 	};
 
 	const handleTagSelectionClick = (tag: string):void => {
-		alert(tag)
+		const _tags = `${formInfo.tags.value.trim()} ${tag}`.trim();
+		handleFormChange('tags', _tags);
 	}
 
 	const handleFormChange = (

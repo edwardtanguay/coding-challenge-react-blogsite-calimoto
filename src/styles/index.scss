@@ -252,6 +252,12 @@ body {
 							display: flex;
 							gap: 0.4rem;
 							flex-wrap: wrap;
+							span {
+								cursor: pointer;
+								&:hover {
+									text-decoration: underline;
+								}
+							}
 						}
 					}
 
