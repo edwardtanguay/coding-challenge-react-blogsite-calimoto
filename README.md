@@ -66,9 +66,9 @@ Live site is online here: https://coding-challenge-react-blogsite-calimoto.verce
 ## development
 
 - total time and project progress: see GitHub log
-  - most commit messages clear and descriptive
+  - most commit messages are clear and descriptive
 - VSCode with Vim extension
-- ChatGPT occasionally, but no Copilot
+- used ChatGPT occasionally, but not Copilot
 - TypeScript, ESLint, Prettier
 
 ## feature backlog 
