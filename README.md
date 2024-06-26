@@ -1,5 +1,5 @@
 # Coding Challenge for Calimoto
-## By Edward Tanguay, June 2024
+**By Edward Tanguay, June 2024**
 
 This application is a coding challenge that I created for the company Calimoto.
 
@@ -16,15 +16,17 @@ This application is a coding challenge that I created for the company Calimoto.
 - ESLint
 - Prettier
 
-## setup
+## Prequisites
 
+- Windows / macOS / Linux
+- Node
+  - created on v20.10.0
+  - tested on v16.18.1
+- to change port:
+  - **package.json**, line 7
+  - `"dev": "vite --port 3010 --open",`
+    
+## setup
+- clone repository
 - `npm i`
 - `npm run dev`
-
-## if you want the older router syntax
-
-- [React Router 6.4 with browserRouter](https://github.com/edwardtanguay/vite-react-menu-browserrouter)
-
-## if you want a site without a menu
-
-- [Vite React](https://github.com/edwardtanguay/vite-react)
