@@ -44,19 +44,18 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 		}
 	};
 
-	const getAllTags = (): string[] => {
+	const rebuildAllTags = (_blogEntries: BlogEntry[]): void => {
 		const tags: string[] = [];
-		for (const blogEntry of blogEntries) {
+		for (const blogEntry of _blogEntries) {
 			tags.push(...blogEntry.tags);
 		}
-		const uniqueTags = Array.from(new Set(tags));
-		uniqueTags.sort((a, b) => (a > b ? 1 : -1));
-		return uniqueTags;
+		const _allTags = Array.from(new Set(tags));
+		_allTags.sort((a, b) => (a > b ? 1 : -1));
+		setAllTags(_allTags);
 	};
 
 	useEffect(() => {
-		const _allTags = getAllTags();
-		setAllTags(_allTags);
+		rebuildAllTags(blogEntries);
 		rebuildFilteredBlogEntries(blogEntries, selectedMainTag);
 	}, []);
 
@@ -64,6 +63,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 		const _blogEntries = blogEntries.filter((m) => m.id !== blogEntry.id);
 		setBlogEntries(_blogEntries);
 		rebuildFilteredBlogEntries(_blogEntries, selectedMainTag);
+		rebuildAllTags(_blogEntries);
 	};
 
 	const handleSaveNewBlogEntry = (blogEntry: BlogEntry): void => {

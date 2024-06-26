@@ -15,6 +15,14 @@ body {
 	}
 
 	section.siteContent {
+		.stats {
+			text-align: center;
+			font-size: .9rem;
+			font-variant: small-caps;
+			color: #777;
+			font-style: italic;
+			margin-bottom: .5rem;
+		}
 		.tagsArea {
 			display: flex;
 			gap: 0.5rem;

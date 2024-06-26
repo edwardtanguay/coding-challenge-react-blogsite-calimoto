@@ -43,7 +43,7 @@ export const PageBlog = () => {
 				</>
 			</section>
 			<section className="stats">
-				Current showing {filteredBlogEntries.length} of {blogEntries.length}
+				Showing {filteredBlogEntries.length} of {blogEntries.length}
 			</section>
 			{filteredBlogEntries.map((blogEntry, index) => {
 				return (
