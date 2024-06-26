@@ -17,13 +17,25 @@ body {
 	section.siteContent {
 		.tagsArea {
 			display: flex;
-			gap: 0.3rem;
+			gap: 0.5rem;
 			flex-wrap: wrap;
 			justify-content: center;
 			margin: 2rem 1rem 1.5rem 1rem;
 
 			button {
 				font-size: 0.9rem;
+				&.selected {
+					color:#000;
+					border: 1px solid #333;
+					border-radius: .3rem;
+					background-color: rgb(255, 255, 255);
+				}
+				&.notSelected {
+					color:#555;
+					border: 1px solid #666;
+					border-radius: .3rem;
+					background-color: #ddd;
+				}
 			}
 		}
 

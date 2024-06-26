@@ -4,15 +4,40 @@ import { AppContext } from "../appContext";
 import * as tools from "../tools";
 
 export const PageBlog = () => {
-	const { blogEntries, handleDeleteBlogEntry, allTags, handleMainTagClick, selectedMainTag } =
-		useContext(AppContext);
+	const {
+		blogEntries,
+		handleDeleteBlogEntry,
+		allTags,
+		handleMainTagClick,
+		selectedMainTag,
+	} = useContext(AppContext);
 
 	return (
 		<>
 			<section className="tagsArea">
-				{allTags.map((tag, index) => {
-					return <button onClick={() => handleMainTagClick(tag)} key={index}>{tag}</button>;
-				})}
+				<>
+					{allTags.map((tag, index) => {
+						return (
+							<button
+								className={
+									selectedMainTag === tag
+										? "selected"
+										: "notSelected"
+								}
+								onClick={() => handleMainTagClick(tag)}
+								key={index}
+							>
+								{tag}
+							</button>
+						);
+					})}
+					<button
+						className={selectedMainTag === "" ? "selected" : "notSelected"}
+						onClick={() => handleMainTagClick('')}
+					>
+					show all tags
+					</button>
+				</>
 			</section>
 			{blogEntries.map((blogEntry, index) => {
 				return (
