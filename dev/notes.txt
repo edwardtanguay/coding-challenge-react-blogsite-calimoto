@@ -1,5 +1,5 @@
-- todo
-	- rename repository to coding-challenge-react-blogsite-calimoto
+- .. todo
+	- .. rename repository to coding-challenge-react-blogsite-calimoto
 	- documentation in tools
 	- jest tests
 	- notes out
@@ -33,6 +33,7 @@
 		- 0 blog entries
 		- 1 blog entry
 		- 404 page
+		- Vercel React Router reload bug resolved
 	- coding environment
 		- VSCode
 		- Prettier
