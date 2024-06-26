@@ -66,13 +66,28 @@ Live site is online here: https://coding-challenge-react-blogsite-calimoto.verce
 ## development
 
 - total time and project progress: see GitHub log
-  - most commit messages clear and description
+  - most commit messages clear and descriptive
 - VSCode with Vim extension
 - ChatGPT occasionally, but no Copilot
 - TypeScript, ESLint, Prettier
 
-## feature backlog
+## feature backlog 
 
-- nnn
+if I were to continue this project, these would be among the list of next steps
 
+- component refactoring, e.g. `PageBlog.tsx` and `CreateEntry.tsx`
+- professional design based on targeted users: color, animations, icons, fonts, images
+- blog entry deletion: add "are you sure?"
+- permalinks for blog entries
+- handle edge cases, e.g. very long blog entries, hundreds of tags
+- form: visual date selector control
+- enable editing of blog entries
+- backend API
+- database/ORM
+- host frontend/backend online, set up deployment pipelines
+- complete code documentation, e.g. of helper functions in `tools.ts`
+- testing:
+  - **Vitest** for `tools.ts` and `FormManager.ts`
+  - **Vitest + React Testing Library** for `pages`, `components` and `AppContext.tsx`
+  - **Cypress** or **Playwright** for end-to-end testing
 
