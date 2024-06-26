@@ -60,7 +60,6 @@ export const isValidIsoDateFormat = (date: string): boolean => {
 		return false;
 	}
 
-	// Further validation for actual date values using Date object
 	const d = new Date(date);
 	const [year, month, day] = date.split("-").map(Number);
 
