@@ -52,5 +52,13 @@ Live site is online here: https://coding-challenge-react-blogsite-calimoto.verce
 
 ![grafik](https://github.com/edwardtanguay/coding-challenge-react-blogsite-calimoto/assets/446574/df3707dc-5478-4b2d-b941-8de249e46b4f)
 
+## coding highlights
+
+- form interactivity and validation handled by **custom class**, `FormManager.tsx`
+- **useContext** ensures central state management
+- **TypeScript** used exclusively
+  - **return types** defined on functions
+- form uses **accessibility** features `fieldset`, `legend`, `htmlFor`
+- 
 
 
