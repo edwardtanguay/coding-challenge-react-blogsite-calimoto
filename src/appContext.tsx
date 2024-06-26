@@ -8,7 +8,7 @@ import * as tools from "./tools";
 tools.sortDates(_initialBlogEntries);
 
 interface IAppContext {
-	blogEntries: BlogEntry[];
+	allBlogEntries: BlogEntry[];
 	filteredBlogEntries: BlogEntry[];
 	setBlogEntries: (blogEntries: BlogEntry[]) => void;
 	handleDeleteBlogEntry: (blogEntry: BlogEntry) => void;
@@ -25,7 +25,7 @@ interface IAppProvider {
 export const AppContext = createContext<IAppContext>({} as IAppContext);
 
 export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
-	const [blogEntries, setBlogEntries] =
+	const [allBlogEntries, setAllBlogEntries] =
 		useState<BlogEntry[]>(_initialBlogEntries);
 	const [filteredBlogEntries, setFilteredBlogEntries] = useState<BlogEntry[]>(
 		[]
@@ -63,38 +63,38 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	};
 
 	useEffect(() => {
-		rebuildAllTags(blogEntries);
-		rebuildFilteredBlogEntries(blogEntries, selectedMainTag);
+		rebuildAllTags(allBlogEntries);
+		rebuildFilteredBlogEntries(allBlogEntries, selectedMainTag);
 	}, []);
 
 	const handleDeleteBlogEntry = (blogEntry: BlogEntry): void => {
-		const _blogEntries = blogEntries.filter((m) => m.id !== blogEntry.id);
-		setBlogEntries(_blogEntries);
+		const _blogEntries = allBlogEntries.filter((m) => m.id !== blogEntry.id);
+		setAllBlogEntries(_blogEntries);
 		rebuildFilteredBlogEntries(_blogEntries, selectedMainTag);
 		rebuildAllTags(_blogEntries);
 	};
 
 	const handleSaveNewBlogEntry = (blogEntry: BlogEntry): void => {
-		blogEntries.push(blogEntry);
-		tools.sortDates(blogEntries);
+		allBlogEntries.push(blogEntry);
+		tools.sortDates(allBlogEntries);
 		const _selectedMainTag = '';
-		setBlogEntries(structuredClone(blogEntries));
-		rebuildFilteredBlogEntries(blogEntries, _selectedMainTag);
-		rebuildAllTags(blogEntries);
+		setAllBlogEntries(structuredClone(allBlogEntries));
+		rebuildFilteredBlogEntries(allBlogEntries, _selectedMainTag);
+		rebuildAllTags(allBlogEntries);
 		setSelectedMainTag(_selectedMainTag);
 	};
 
 	const handleMainTagClick = (_selectedMainTag: string): void => {
 		setSelectedMainTag(_selectedMainTag);
-		rebuildFilteredBlogEntries(blogEntries, _selectedMainTag);
+		rebuildFilteredBlogEntries(allBlogEntries, _selectedMainTag);
 	};
 
 	return (
 		<AppContext.Provider
 			value={{
-				blogEntries,
+				allBlogEntries,
 				filteredBlogEntries,
-				setBlogEntries,
+				setBlogEntries: setAllBlogEntries,
 				handleDeleteBlogEntry,
 				handleSaveNewBlogEntry,
 				allTags,

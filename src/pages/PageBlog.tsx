@@ -5,7 +5,7 @@ import * as tools from "../tools";
 
 export const PageBlog = () => {
 	const {
-		blogEntries,
+		allBlogEntries,
 		filteredBlogEntries,
 		handleDeleteBlogEntry,
 		allTags,
@@ -43,7 +43,7 @@ export const PageBlog = () => {
 				</>
 			</section>
 			<section className="stats">
-				Showing {filteredBlogEntries.length} of {blogEntries.length}
+				Showing {filteredBlogEntries.length} of {allBlogEntries.length}
 			</section>
 			{filteredBlogEntries.map((blogEntry, index) => {
 				return (
