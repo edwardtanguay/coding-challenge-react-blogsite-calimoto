@@ -53,9 +53,11 @@
 		- x if showing none, then show all
 	- x rename blogEtnries to allBlogEntries
 	- x if none
-	- .. top links
+	- x top links
+	- .. making of page larger headers
 	- form:
 		- show tag choice, tag comletion
+	- code clean up
 	- 100% mobile
 		- tag area is a dropdown
 		- (check on phone)
