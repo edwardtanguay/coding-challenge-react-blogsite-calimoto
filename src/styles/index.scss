@@ -248,16 +248,10 @@ body {
 						}
 
 						.availableTags {
-							font-size: 0.7rem;
+							font-size: 1rem;
 							display: flex;
 							gap: 0.4rem;
 							flex-wrap: wrap;
-							span {
-								cursor: pointer;
-								&:hover {
-									text-decoration: underline;
-								}
-							}
 						}
 					}
 
