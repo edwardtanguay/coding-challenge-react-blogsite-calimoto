@@ -5,7 +5,7 @@ import * as tools from "../tools";
 
 export const PageBlog = () => {
 	const {
-		blogEntries,
+		filteredBlogEntries,
 		handleDeleteBlogEntry,
 		allTags,
 		handleMainTagClick,
@@ -32,16 +32,16 @@ export const PageBlog = () => {
 						);
 					})}
 					<button
-						className={
+						className={`showAll ${
 							selectedMainTag === "" ? "selected" : "notSelected"
-						}
+						}`}
 						onClick={() => handleMainTagClick("")}
 					>
 						show all tags
 					</button>
 				</>
 			</section>
-			{blogEntries.map((blogEntry, index) => {
+			{filteredBlogEntries.map((blogEntry, index) => {
 				return (
 					<div key={index} className="blogEntry">
 						<div className="blogEntryHeader">

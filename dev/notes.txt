@@ -47,10 +47,12 @@
 		- x show all tags als buttons (top)
 		- x click on tag, show it as selected
 		- x on items, styling shared and same
-		- .. when item button clicked, process
+		- x when item button clicked, process
+		- x filter based on selected tag
+		- .. update after delete and add
+		- rename blogEtnries to allBlogEntries
 		- only entries with those tags are shown
 		- only allow one tag to be selected 
-		- update after delete and add
 	- form:
 		- show tag choice, tag comletion
 	- 100% mobile

@@ -77,9 +77,12 @@ export const arrayHasDuplicateItems = (items: string[]): boolean => {
 	return false;
 };
 
-export const stringInArrayTooShort = (arr: string[], limit:number): boolean => {
+export const stringInArrayTooShort = (
+	arr: string[],
+	limit: number
+): boolean => {
 	for (const str of arr) {
-		if (str.length < limit) {
+		if (str.length <= limit) {
 			return true;
 		}
 	}

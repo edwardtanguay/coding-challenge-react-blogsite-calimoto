@@ -94,11 +94,11 @@ export class FormManager {
 
 		// tags
 		const tgl = this.formInfo.tags.value.length;
-		const tagItems = this.formInfo.tags.value.split(' ');
+		const tagItems = this.formInfo.tags.value.trim().split(' ');
 		if (tgl === 0) {
 			this.formInfo.tags.message = "(enter tags)";
 			this.formInfo.tags.error = "";
-		} else if (tools.stringInArrayTooShort(tagItems, 3)) {
+		} else if (tools.stringInArrayTooShort(tagItems, 2)) {
 			this.formInfo.tags.message = "";
 			this.formInfo.tags.error = "tag is less than 3 chars";
 		} else if (tools.arrayHasDuplicateItems(tagItems)) {

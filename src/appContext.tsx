@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createContext, useEffect, useState } from "react";
 import { BlogEntry } from "./types";
@@ -8,6 +9,7 @@ tools.sortDates(_initialBlogEntries);
 
 interface IAppContext {
 	blogEntries: BlogEntry[];
+	filteredBlogEntries: BlogEntry[];
 	setBlogEntries: (blogEntries: BlogEntry[]) => void;
 	handleDeleteBlogEntry: (blogEntry: BlogEntry) => void;
 	handleSaveNewBlogEntry: (blogEntry: BlogEntry) => void;
@@ -25,8 +27,22 @@ export const AppContext = createContext<IAppContext>({} as IAppContext);
 export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	const [blogEntries, setBlogEntries] =
 		useState<BlogEntry[]>(_initialBlogEntries);
+	const [filteredBlogEntries, setFilteredBlogEntries] = useState<BlogEntry[]>(
+		[]
+	);
 	const [allTags, setAllTags] = useState<string[]>([]);
 	const [selectedMainTag, setSelectedMainTag] = useState("");
+
+	const rebuildFilteredBlogEntries = () => {
+		if (tools.isEmpty(selectedMainTag)) {
+			setFilteredBlogEntries(blogEntries);
+		} else {
+			const _filteredBlogEntries = blogEntries.filter((m) =>
+				m.tags.includes(selectedMainTag)
+			);
+			setFilteredBlogEntries(_filteredBlogEntries);
+		}
+	};
 
 	const getAllTags = (): string[] => {
 		const tags: string[] = [];
@@ -41,7 +57,12 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	useEffect(() => {
 		const _allTags = getAllTags();
 		setAllTags(_allTags);
+		rebuildFilteredBlogEntries();
 	}, []);
+
+	useEffect(() => {
+		rebuildFilteredBlogEntries();
+	}, [selectedMainTag]);
 
 	const handleDeleteBlogEntry = (blogEntry: BlogEntry): void => {
 		const _blogEntries = blogEntries.filter((m) => m.id !== blogEntry.id);
@@ -62,6 +83,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 		<AppContext.Provider
 			value={{
 				blogEntries,
+				filteredBlogEntries,
 				setBlogEntries,
 				handleDeleteBlogEntry,
 				handleSaveNewBlogEntry,
