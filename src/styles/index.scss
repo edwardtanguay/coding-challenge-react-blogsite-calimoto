@@ -246,6 +246,13 @@ body {
 							font-size: 1.1rem;
 							font-family: monospace;
 						}
+
+						.availableTags {
+							font-size: .7rem;
+							display: flex;
+							gap: .4rem;
+							flex-wrap: wrap;
+						}
 					}
 
 					.buttonRow {

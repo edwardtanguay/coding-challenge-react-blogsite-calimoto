@@ -6,7 +6,7 @@ import { FormInfo } from "../types";
 import { FormManager } from "../classes/FormManager";
 
 export const PageCreateEntry = () => {
-	const { handleSaveNewBlogEntry } = useContext(AppContext);
+	const { handleSaveNewBlogEntry, allTags } = useContext(AppContext);
 	const navigate = useNavigate();
 	const [formInfo, setFormInfo] = useState<FormInfo>(
 		FormManager.getBlankFormInfo()
@@ -113,6 +113,11 @@ export const PageCreateEntry = () => {
 								id="tags"
 								onChange={(e) => handleFormChange("tags", e)}
 							/>
+							<div className="availableTags">
+								{allTags.map((tag, index) => {
+									return <span key={index}>{tag}</span>;
+								})}
+							</div>
 						</div>
 
 						<div className="row">
@@ -139,7 +144,10 @@ export const PageCreateEntry = () => {
 							<button onClick={(e) => handleCancelForm(e)}>
 								Cancel
 							</button>
-							<button disabled={!formInfo.formIsValid} onClick={(e) => handleSaveForm(e)}>
+							<button
+								disabled={!formInfo.formIsValid}
+								onClick={(e) => handleSaveForm(e)}
+							>
 								Save
 							</button>
 						</div>

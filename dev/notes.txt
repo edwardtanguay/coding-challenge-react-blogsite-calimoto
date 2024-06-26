@@ -54,9 +54,13 @@
 	- x rename blogEtnries to allBlogEntries
 	- x if none
 	- x top links
-	- .. making of page larger headers
-	- form:
-		- show tag choice, tag comletion
+	- x making of page larger headers
+	- .. form: show tag choice
+	- enable tag comletion
+
+
+	- create endgame todo list
+
 	- code clean up
 	- 100% mobile
 		- tag area is a dropdown

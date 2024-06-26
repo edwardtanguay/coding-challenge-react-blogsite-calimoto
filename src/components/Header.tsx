@@ -11,7 +11,7 @@ export const Header = () => {
 					</NavLink>
 				</h1>
 				<NavLink to="/making-of" className="makingOf">
-					the making of
+					→ the making of
 				</NavLink>
 			</div>
 			<Nav />
