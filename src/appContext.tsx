@@ -33,12 +33,12 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	const [allTags, setAllTags] = useState<string[]>([]);
 	const [selectedMainTag, setSelectedMainTag] = useState("");
 
-	const rebuildFilteredBlogEntries = () => {
-		if (tools.isEmpty(selectedMainTag)) {
-			setFilteredBlogEntries(blogEntries);
+	const rebuildFilteredBlogEntries = (_blogEntries: BlogEntry[], _selectedMainTag: string) => {
+		if (tools.isEmpty(_selectedMainTag)) {
+			setFilteredBlogEntries(_blogEntries);
 		} else {
-			const _filteredBlogEntries = blogEntries.filter((m) =>
-				m.tags.includes(selectedMainTag)
+			const _filteredBlogEntries = _blogEntries.filter((m) =>
+				m.tags.includes(_selectedMainTag)
 			);
 			setFilteredBlogEntries(_filteredBlogEntries);
 		}
@@ -57,16 +57,13 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	useEffect(() => {
 		const _allTags = getAllTags();
 		setAllTags(_allTags);
-		rebuildFilteredBlogEntries();
+		rebuildFilteredBlogEntries(blogEntries, selectedMainTag);
 	}, []);
-
-	useEffect(() => {
-		rebuildFilteredBlogEntries();
-	}, [selectedMainTag]);
 
 	const handleDeleteBlogEntry = (blogEntry: BlogEntry): void => {
 		const _blogEntries = blogEntries.filter((m) => m.id !== blogEntry.id);
 		setBlogEntries(_blogEntries);
+		rebuildFilteredBlogEntries(_blogEntries, selectedMainTag);
 	};
 
 	const handleSaveNewBlogEntry = (blogEntry: BlogEntry): void => {
@@ -75,8 +72,9 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 		setBlogEntries(structuredClone(blogEntries));
 	};
 
-	const handleMainTagClick = (tag: string): void => {
-		setSelectedMainTag(tag);
+	const handleMainTagClick = (_selectedMainTag: string): void => {
+		setSelectedMainTag(_selectedMainTag);
+		rebuildFilteredBlogEntries(blogEntries, _selectedMainTag);
 	};
 
 	return (
