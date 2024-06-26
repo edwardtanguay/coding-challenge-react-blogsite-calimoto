@@ -9,10 +9,7 @@ export const PageMakingOf = () => {
 				information about how to use this site, and shows you how to
 				experience all the built-in features. For more technical
 				information, see the{" "}
-				<a href="nnn" target="_blank">
-					repository README file
-				</a>
-				.
+				<a href="nnn" target="_blank">GitHub repository</a>.
 			</p>
 		</section>
 	);
