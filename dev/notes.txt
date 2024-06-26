@@ -55,8 +55,9 @@
 	- x if none
 	- x top links
 	- x making of page larger headers
-	- .. form: show tag choice
-	- enable tag comletion
+	- x form: show tag choice
+	- .. enable tag comletion through clicking
+		- mock click
 
 
 	- create endgame todo list

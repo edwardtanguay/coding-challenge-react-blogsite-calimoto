@@ -24,6 +24,10 @@ export const PageCreateEntry = () => {
 		navigate("/blog");
 	};
 
+	const handleTagSelectionClick = (tag: string):void => {
+		alert(tag)
+	}
+
 	const handleFormChange = (
 		field: string,
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -115,7 +119,7 @@ export const PageCreateEntry = () => {
 							/>
 							<div className="availableTags">
 								{allTags.map((tag, index) => {
-									return <span key={index}>{tag}</span>;
+									return <span onClick={() => handleTagSelectionClick(tag)} key={index}>{tag}</span>;
 								})}
 							</div>
 						</div>
