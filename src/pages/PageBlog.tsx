@@ -4,14 +4,14 @@ import { AppContext } from "../appContext";
 import * as tools from "../tools";
 
 export const PageBlog = () => {
-	const { blogEntries, handleDeleteBlogEntry, allTags } =
+	const { blogEntries, handleDeleteBlogEntry, allTags, handleMainTagClick } =
 		useContext(AppContext);
 
 	return (
 		<>
 			<section className="tagsArea">
 				{allTags.map((tag, index) => {
-					return <button key={index}>{tag}</button>;
+					return <button onClick={() => handleMainTagClick(tag)} key={index}>{tag}</button>;
 				})}
 			</section>
 			{blogEntries.map((blogEntry, index) => {

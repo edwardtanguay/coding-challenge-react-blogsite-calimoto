@@ -45,10 +45,10 @@
 		- x formIsValid and disable save button
 	- .. filter:
 		- x show all tags als buttons (top)
-		- click on tag
-		- show it as selected
+		- .. click on tag, show it as selected
 		- only entries with those tags are shown
 		- only allow one tag to be selected 
+		- update after delete and add
 	- form:
 		- show tag choice, tag comletion
 	- 100% mobile

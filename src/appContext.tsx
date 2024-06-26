@@ -12,6 +12,7 @@ interface IAppContext {
 	handleDeleteBlogEntry: (blogEntry: BlogEntry) => void;
 	handleSaveNewBlogEntry: (blogEntry: BlogEntry) => void;
 	allTags: string[];
+	handleMainTagClick: (tag: string) => void;
 }
 
 interface IAppProvider {
@@ -51,6 +52,10 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 		setBlogEntries(structuredClone(blogEntries));
 	};
 
+	const handleMainTagClick = (tag: string): void => {
+		console.log(111, tag);
+	};
+
 	return (
 		<AppContext.Provider
 			value={{
@@ -59,6 +64,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 				handleDeleteBlogEntry,
 				handleSaveNewBlogEntry,
 				allTags,
+				handleMainTagClick,
 			}}
 		>
 			{children}
