@@ -16,7 +16,7 @@ This application is a coding challenge that I created for the company Calimoto.
 - ESLint
 - Prettier
 
-## Prequisites
+## prequisites
 
 - Windows / macOS / Linux
 - Node
@@ -27,6 +27,19 @@ This application is a coding challenge that I created for the company Calimoto.
   - `"dev": "vite --port 3010 --open",`
     
 ## setup
+
 - clone repository
 - `npm i`
 - `npm run dev`
+
+## functional overview
+
+- mock blog site
+- user can view, delete and create blog entries
+- changes are not saved, i.e. erased upon browser refresh
+
+## design and layout
+- responsive
+- colors are minimal on purpose to focus on functionality
+
+
