@@ -77,7 +77,7 @@ if I were to continue this project, these would be among the list of next steps
 
 - component refactoring, e.g. `PageBlog.tsx` and `CreateEntry.tsx`
 - professional design based on targeted users: color, animations, icons, fonts, images
-- blog entry deletion: add "are you sure?"
+- blog entry deletion with "are you sure?" option
 - permalinks for blog entries
 - handle edge cases, e.g. very long blog entries, hundreds of tags
 - form: visual date selector control
