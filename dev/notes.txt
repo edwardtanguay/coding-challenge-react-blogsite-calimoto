@@ -2,6 +2,10 @@
 	- rename repository to coding-challenge-react-blogsite-calimoto
 	- documentation in tools
 	- jest tests
+	- notes out
+- making of
+	- long gif
+	- list features in gif
 - GitHub
 	- two gifs
 		- mobile view
@@ -53,31 +57,28 @@
 	- version 2
 		- fix known issues:
 			- form: tags field: when user uses CTRL-Backend to delete the text in the Tags Textarea, it doesn't refocus after it switches to Input box.
-- making of
-	- long gif
-	- list features in gif
-- feature backlog
-	- refactor into smaller components
-		- PageBlog.tsx
-		- CreateEntry.tsx
-	- implement professional design
-		- color choices
-			- tags: various colors
-		- animation
-		- icons
-		- font
-		- images
-	- delete: add "are you sure" option
-	- add Tailwind/shadcn
-		- use Sass and Tailwind side-by-side where each has advantages
-	- permalinks for blog entries
-	- handle edge cases
-		- page-long blog entries
-		- hundreds of tags
-	- date entry: implement a sophisticated date control 
-	- body field: implement markdown
-	- show single page
-	- full CRUD features
-	- backend API
-		- Node/Express with CRUD routing
-		- connect to hosted database via Prisma
+	- feature backlog
+		- refactor into smaller components
+			- PageBlog.tsx
+			- CreateEntry.tsx
+		- implement professional design
+			- color choices
+				- tags: various colors
+			- animation
+			- icons
+			- font
+			- images
+		- delete: add "are you sure" option
+		- add Tailwind/shadcn
+			- use Sass and Tailwind side-by-side where each has advantages
+		- permalinks for blog entries
+		- handle edge cases
+			- page-long blog entries
+			- hundreds of tags
+		- date entry: implement a sophisticated date control 
+		- body field: implement markdown
+		- show single page
+		- full CRUD features
+		- backend API
+			- Node/Express with CRUD routing
+			- connect to hosted database via Prisma
