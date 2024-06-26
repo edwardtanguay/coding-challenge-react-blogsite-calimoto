@@ -24,15 +24,12 @@ export const PageCreateEntry = () => {
 		navigate("/blog");
 	};
 
-	const handleTagSelectionClick = (tag: string):void => {
+	const handleTagSelectionClick = (tag: string): void => {
 		const _tags = `${formInfo.tags.value.trim()} ${tag}`.trim();
-		handleFormChange('tags', _tags);
-	}
+		handleFormChange("tags", _tags);
+	};
 
-	const handleFormChange = (
-		field: string,
-		value: string,
-	) => {
+	const handleFormChange = (field: string, value: string) => {
 		switch (field) {
 			case "date":
 			case "title":
@@ -73,7 +70,9 @@ export const PageCreateEntry = () => {
 								value={formInfo.date.value}
 								name="date"
 								id="date"
-								onChange={(e) => handleFormChange("date", e.target.value)}
+								onChange={(e) =>
+									handleFormChange("date", e.target.value)
+								}
 							/>
 						</div>
 
@@ -94,7 +93,9 @@ export const PageCreateEntry = () => {
 								value={formInfo.title.value}
 								name="title"
 								id="title"
-								onChange={(e) => handleFormChange("title", e.target.value)}
+								onChange={(e) =>
+									handleFormChange("title", e.target.value)
+								}
 							/>
 						</div>
 
@@ -110,16 +111,38 @@ export const PageCreateEntry = () => {
 									</span>
 								</div>
 							</div>
-							<input
-								type="text"
-								value={formInfo.tags.value}
-								name="tags"
-								id="tags"
-								onChange={(e) => handleFormChange("tags", e.target.value)}
-							/>
+							{formInfo.tags.value.length <= 30 ? (
+								<input
+									type="text"
+									value={formInfo.tags.value}
+									name="tags"
+									id="tags"
+									onChange={(e) =>
+										handleFormChange("tags", e.target.value)
+									}
+								/>
+							) : (
+								<textarea
+									spellCheck={false}
+									value={formInfo.tags.value}
+									className="tagsExpanded"
+									onChange={(e) =>
+										handleFormChange("tags", e.target.value)
+									}
+								></textarea>
+							)}
 							<div className="availableTags">
 								{allTags.map((tag, index) => {
-									return <span onClick={() => handleTagSelectionClick(tag)} key={index}>{tag}</span>;
+									return (
+										<span
+											onClick={() =>
+												handleTagSelectionClick(tag)
+											}
+											key={index}
+										>
+											{tag}
+										</span>
+									);
 								})}
 							</div>
 						</div>
@@ -140,7 +163,9 @@ export const PageCreateEntry = () => {
 								spellCheck={false}
 								value={formInfo.body.value}
 								className="body"
-								onChange={(e) => handleFormChange("body", e.target.value)}
+								onChange={(e) =>
+									handleFormChange("body", e.target.value)
+								}
 							></textarea>
 						</div>
 

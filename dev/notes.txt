@@ -61,7 +61,7 @@
 
 
 	- create endgame todo list
-
+	- known issues: when typing in tags, when it expands to a textArea you lose focus
 	- code clean up
 	- 100% mobile
 		- tag area is a dropdown
