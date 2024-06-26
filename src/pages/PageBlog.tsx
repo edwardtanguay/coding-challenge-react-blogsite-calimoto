@@ -32,10 +32,12 @@ export const PageBlog = () => {
 						);
 					})}
 					<button
-						className={selectedMainTag === "" ? "selected" : "notSelected"}
-						onClick={() => handleMainTagClick('')}
+						className={
+							selectedMainTag === "" ? "selected" : "notSelected"
+						}
+						onClick={() => handleMainTagClick("")}
 					>
-					show all tags
+						show all tags
 					</button>
 				</>
 			</section>
@@ -57,7 +59,18 @@ export const PageBlog = () => {
 						<div className="title">{blogEntry.title}</div>
 						<div className="tags">
 							{blogEntry.tags.map((tag, index) => {
-								return <button key={index}>{tag}</button>;
+								return (
+									<button
+										className={
+											selectedMainTag === tag
+												? "selected"
+												: "notSelected"
+										}
+										key={index}
+									>
+										{tag}
+									</button>
+								);
 							})}
 						</div>
 						<div className="body">{blogEntry.body}</div>

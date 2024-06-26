@@ -25,15 +25,15 @@ body {
 			button {
 				font-size: 0.9rem;
 				&.selected {
-					color:#000;
+					color: #000;
 					border: 1px solid #333;
-					border-radius: .3rem;
+					border-radius: 0.3rem;
 					background-color: rgb(255, 255, 255);
 				}
 				&.notSelected {
-					color:#555;
+					color: #555;
 					border: 1px solid #666;
-					border-radius: .3rem;
+					border-radius: 0.3rem;
 					background-color: #ddd;
 				}
 			}
@@ -100,6 +100,18 @@ body {
 				gap: 0.2rem;
 				button {
 					font-size: 0.7rem;
+					&.selected {
+						color: #000;
+						border: 1px solid #333;
+						border-radius: 0.3rem;
+						background-color: rgb(255, 255, 255);
+					}
+					&.notSelected {
+						color: #555;
+						border: 1px solid #666;
+						border-radius: 0.3rem;
+						background-color: #ddd;
+					}
 				}
 			}
 
