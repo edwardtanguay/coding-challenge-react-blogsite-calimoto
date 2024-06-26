@@ -33,14 +33,22 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	const [allTags, setAllTags] = useState<string[]>([]);
 	const [selectedMainTag, setSelectedMainTag] = useState("");
 
-	const rebuildFilteredBlogEntries = (_blogEntries: BlogEntry[], _selectedMainTag: string) => {
+	const rebuildFilteredBlogEntries = (
+		_blogEntries: BlogEntry[],
+		_selectedMainTag: string
+	) => {
 		if (tools.isEmpty(_selectedMainTag)) {
 			setFilteredBlogEntries(_blogEntries);
 		} else {
 			const _filteredBlogEntries = _blogEntries.filter((m) =>
 				m.tags.includes(_selectedMainTag)
 			);
-			setFilteredBlogEntries(_filteredBlogEntries);
+			if (_filteredBlogEntries.length === 0) {
+				setSelectedMainTag("");
+				setFilteredBlogEntries(_blogEntries);
+			} else {
+				setFilteredBlogEntries(_filteredBlogEntries);
+			}
 		}
 	};
 
@@ -69,7 +77,11 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	const handleSaveNewBlogEntry = (blogEntry: BlogEntry): void => {
 		blogEntries.push(blogEntry);
 		tools.sortDates(blogEntries);
+		const _selectedMainTag = '';
 		setBlogEntries(structuredClone(blogEntries));
+		rebuildFilteredBlogEntries(blogEntries, _selectedMainTag);
+		rebuildAllTags(blogEntries);
+		setSelectedMainTag(_selectedMainTag);
 	};
 
 	const handleMainTagClick = (_selectedMainTag: string): void => {

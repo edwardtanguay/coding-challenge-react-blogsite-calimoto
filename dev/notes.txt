@@ -49,7 +49,8 @@
 		- x on items, styling shared and same
 		- x when item button clicked, process
 		- x filter based on selected tag
-		- .. update after delete and add
+		- x update after delete and add
+		- .. if showing none, then show all
 		- rename blogEtnries to allBlogEntries
 		- only entries with those tags are shown
 		- only allow one tag to be selected 
@@ -60,6 +61,8 @@
 		- (check on phone)
 		- check on chrome
 	- todo
+		- rename so not "et782"
+		- My Rides clickable
 		- all pages are sections
 		- making of
 			- gifs for mobile and computer, etc.
