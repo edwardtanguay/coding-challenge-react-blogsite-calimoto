@@ -3,6 +3,8 @@
 
 This application is a coding challenge that I created for the company Calimoto.
 
+Live site is online here: https://coding-challenge-react-blogsite-calimoto.vercel.app 
+
 ![reactccdemo](https://github.com/edwardtanguay/coding-challenge-react-blogsite-calimoto/assets/446574/d0c97f1b-567b-4b31-a437-acffc4196d14)
 
 ## features
