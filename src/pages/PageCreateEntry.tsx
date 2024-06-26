@@ -6,7 +6,7 @@ import * as tools from "../tools";
 import { FormInfo } from "../types";
 import { FormManager } from "../classes/FormManager";
 
-const characterLimitforOneLineTagEntry = 10;
+const characterLimitforOneLineTagEntry = 30;
 
 export const PageCreateEntry = () => {
 	const { handleSaveNewBlogEntry, allTags } = useContext(AppContext);
@@ -46,17 +46,17 @@ export const PageCreateEntry = () => {
 				const currentValue = formInfo.tags.value;
 				const newValue = value;
 
-				// // user is typing past the limit so switch from input to textarea and maintain focus
-				// if (
-				// 	currentValue.length <= characterLimitforOneLineTagEntry &&
-				// 	newValue.length > characterLimitforOneLineTagEntry
-				// ) {
-				// 	setTimeout(() => {
-				// 		if (tagsInputRef.current) {
-				// 			tagsInputRef.current.focus();
-				// 		}
-				// 	}, 0);
-				// }
+				// user is typing past the limit so switch from input to textarea and maintain focus
+				if (
+					currentValue.length > characterLimitforOneLineTagEntry &&
+					newValue.length >= characterLimitforOneLineTagEntry
+				) {
+					setTimeout(() => {
+						if (tagsInputRef.current) {
+							tagsInputRef.current.focus();
+						}
+					}, 0);
+				}
 
 				// user is backspacing back under the limit so switch from textarea back to input and maintain focus
 				if (
