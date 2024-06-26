@@ -4,7 +4,7 @@ import { AppContext } from "../appContext";
 import * as tools from "../tools";
 
 export const PageBlog = () => {
-	const { blogEntries, handleDeleteBlogEntry, allTags, handleMainTagClick } =
+	const { blogEntries, handleDeleteBlogEntry, allTags, handleMainTagClick, selectedMainTag } =
 		useContext(AppContext);
 
 	return (

@@ -13,6 +13,7 @@ interface IAppContext {
 	handleSaveNewBlogEntry: (blogEntry: BlogEntry) => void;
 	allTags: string[];
 	handleMainTagClick: (tag: string) => void;
+	selectedMainTag: string;
 }
 
 interface IAppProvider {
@@ -25,6 +26,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	const [blogEntries, setBlogEntries] =
 		useState<BlogEntry[]>(_initialBlogEntries);
 	const [allTags, setAllTags] = useState<string[]>([]);
+	const [selectedMainTag, setSelectedMainTag] = useState("");
 
 	const getAllTags = (): string[] => {
 		const tags: string[] = [];
@@ -53,7 +55,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	};
 
 	const handleMainTagClick = (tag: string): void => {
-		console.log(111, tag);
+		setSelectedMainTag(tag);
 	};
 
 	return (
@@ -65,6 +67,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 				handleSaveNewBlogEntry,
 				allTags,
 				handleMainTagClick,
+				selectedMainTag,
 			}}
 		>
 			{children}
