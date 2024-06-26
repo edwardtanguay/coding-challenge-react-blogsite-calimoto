@@ -32,14 +32,18 @@ This application is a coding challenge that I created for the company Calimoto.
 - `npm i`
 - `npm run dev`
 
-## functional overview
+## purpose of site
 
 - mock blog site
 - user can view, delete and create blog entries
-- changes are not saved, i.e. erased upon browser refresh
+- changes are not saved, i.e. erased on browser refresh
 
 ## design and layout
+
 - responsive
-- colors are minimal on purpose to focus on functionality
-
-
+- colors kept minimal to focus on functionality
+- tested on
+  - Windows 10: Chrome, Firefox, Opera, Edge
+  - Ubuntu 22.04: Chrome, Firefox
+  - Samsung A52s: Chrome, Samsung browser
+  - iPhone 13: Safari, Chrome
