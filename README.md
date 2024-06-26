@@ -49,3 +49,8 @@ Live site is online here: https://coding-challenge-react-blogsite-calimoto.verce
   - Ubuntu 22.04: Chrome, Firefox
   - Samsung A52s: Chrome, Samsung browser
   - iPhone 13: Safari, Chrome
+
+![grafik](https://github.com/edwardtanguay/coding-challenge-react-blogsite-calimoto/assets/446574/df3707dc-5478-4b2d-b941-8de249e46b4f)
+
+
+
