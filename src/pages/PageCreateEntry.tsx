@@ -1,9 +1,12 @@
-import React, { useContext, useState } from "react";
+/* eslint-disable no-case-declarations */
+import React, { useContext, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../appContext";
 import * as tools from "../tools";
 import { FormInfo } from "../types";
 import { FormManager } from "../classes/FormManager";
+
+const characterLimitforOneLineTagEntry = 10;
 
 export const PageCreateEntry = () => {
 	const { handleSaveNewBlogEntry, allTags } = useContext(AppContext);
@@ -11,6 +14,8 @@ export const PageCreateEntry = () => {
 	const [formInfo, setFormInfo] = useState<FormInfo>(
 		FormManager.getBlankFormInfo()
 	);
+
+	const tagsExpandedRef = useRef<HTMLTextAreaElement>(null);
 
 	const handleCancelForm = (e: React.MouseEvent<HTMLButtonElement>): void => {
 		e.preventDefault();
@@ -34,8 +39,23 @@ export const PageCreateEntry = () => {
 			case "date":
 			case "title":
 			case "body":
-			case "tags":
 				formInfo[field].value = value;
+				break;
+			case "tags":
+				const currentValue = formInfo.tags.value;
+				const newValue = value;
+				if (
+					currentValue.length <= characterLimitforOneLineTagEntry &&
+					newValue.length > characterLimitforOneLineTagEntry
+				) {
+					setTimeout(() => {
+						if (tagsExpandedRef.current) {
+							tagsExpandedRef.current.focus();
+						}
+					}, 0);
+				}
+				formInfo.tags.value = newValue;
+				break;
 				break;
 			default:
 				console.log(
@@ -111,26 +131,32 @@ export const PageCreateEntry = () => {
 									</span>
 								</div>
 							</div>
-							{formInfo.tags.value.length <= 30 ? (
-								<input
-									type="text"
-									value={formInfo.tags.value}
-									name="tags"
-									id="tags"
-									onChange={(e) =>
-										handleFormChange("tags", e.target.value)
-									}
-								/>
-							) : (
-								<textarea
-									spellCheck={false}
-									value={formInfo.tags.value}
-									className="tagsExpanded"
-									onChange={(e) =>
-										handleFormChange("tags", e.target.value)
-									}
-								></textarea>
-							)}
+							<input
+								type="text"
+								hidden={
+									formInfo.tags.value.length >
+									characterLimitforOneLineTagEntry
+								}
+								value={formInfo.tags.value}
+								name="tags"
+								id="tags"
+								onChange={(e) =>
+									handleFormChange("tags", e.target.value)
+								}
+							/>
+							<textarea
+								spellCheck={false}
+								hidden={
+									formInfo.tags.value.length <=
+									characterLimitforOneLineTagEntry
+								}
+								ref={tagsExpandedRef}
+								value={formInfo.tags.value}
+								className="tagsExpanded"
+								onChange={(e) =>
+									handleFormChange("tags", e.target.value)
+								}
+							></textarea>
 							<div className="availableTags">
 								{allTags.map((tag, index) => {
 									return (
