@@ -30,9 +30,8 @@ export const PageCreateEntry = () => {
 
 	const handleFormChange = (
 		field: string,
-		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+		value: string,
 	) => {
-		const value = e.target.value;
 		switch (field) {
 			case "date":
 			case "title":
@@ -73,7 +72,7 @@ export const PageCreateEntry = () => {
 								value={formInfo.date.value}
 								name="date"
 								id="date"
-								onChange={(e) => handleFormChange("date", e)}
+								onChange={(e) => handleFormChange("date", e.target.value)}
 							/>
 						</div>
 
@@ -94,7 +93,7 @@ export const PageCreateEntry = () => {
 								value={formInfo.title.value}
 								name="title"
 								id="title"
-								onChange={(e) => handleFormChange("title", e)}
+								onChange={(e) => handleFormChange("title", e.target.value)}
 							/>
 						</div>
 
@@ -115,7 +114,7 @@ export const PageCreateEntry = () => {
 								value={formInfo.tags.value}
 								name="tags"
 								id="tags"
-								onChange={(e) => handleFormChange("tags", e)}
+								onChange={(e) => handleFormChange("tags", e.target.value)}
 							/>
 							<div className="availableTags">
 								{allTags.map((tag, index) => {
@@ -140,7 +139,7 @@ export const PageCreateEntry = () => {
 								spellCheck={false}
 								value={formInfo.body.value}
 								className="body"
-								onChange={(e) => handleFormChange("body", e)}
+								onChange={(e) => handleFormChange("body", e.target.value)}
 							></textarea>
 						</div>
 
