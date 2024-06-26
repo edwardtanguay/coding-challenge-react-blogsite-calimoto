@@ -67,6 +67,7 @@ export const PageBlog = () => {
 												: "notSelected"
 										}
 										key={index}
+										onClick={() => handleMainTagClick(tag)}
 									>
 										{tag}
 									</button>
