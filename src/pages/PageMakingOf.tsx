@@ -5,7 +5,7 @@ export const PageMakingOf = () => {
 			<h3>By Edward Tanguay, June 2024</h3>
 			<p className="intro">
 				This application is a coding challenge that I created for the
-				company Calimoto. This page describes some page basic
+				company Calimoto. This page describes some basic
 				information about how to use this site, and shows you how to
 				experience all the built-in features. For more technical
 				information, see the{" "}
