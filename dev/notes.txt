@@ -46,7 +46,8 @@
 	- .. filter:
 		- x show all tags als buttons (top)
 		- x click on tag, show it as selected
-		- .. on items, styling shared and same
+		- x on items, styling shared and same
+		- .. when item button clicked, process
 		- only entries with those tags are shown
 		- only allow one tag to be selected 
 		- update after delete and add
