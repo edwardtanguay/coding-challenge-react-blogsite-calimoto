@@ -1,90 +1,45 @@
-- version 1
-	- x create site with template
-		- x (typescript)
-		- x tailwind out
-		- x replace design from before
-			- x sass in a folder
-			- x gray
-		- x style page 404
-		- x menu: Blog | Create New Entry
-	- x type: diaryEntry
-		- date, string: "2024-06-22"
-		- body, string: "It was a great time..."
-		- tags, string[]: ["food", "friends"]
-	- x data/blogEntries.json
-	- x list entries
-		- x sorted by newest first
-	- x delete button next to each entry
-		- x just delete it: click and gone
-	- x create entry (new page)
-		- x FORM
-			- Date: [___________] (text), "2024-06-22"
-			- Body: (textarea), "This was..."
-			- Tags: [________________] (text), "family food"
-				- all lower case
-			- [Cancel] --> Blog
-			- [Save] --> saved --> Blog
-		- x button handlers
-	- x making of site
-		x add actual page
-	- x implement useContext with blogEntries
-	- x move handler
-	- x mock out handleSaveForm to save a mock blogEntry
-		- x resort
-	- x createSuuid
-	- x createEntryPage: create formData object
-	 	- x add values to form
-		- x save to form with base functionality
-		- x convert data to motorcycle rides
-		- x fix display dates
-		- x add minimal validation
-	- x all validate
-		- x tags
-			- x if duplicate
-		- x body
-		- x formIsValid and disable save button
-	-  filter:
-		- x show all tags als buttons (top)
-		- x click on tag, show it as selected
-		- x on items, styling shared and same
-		- x when item button clicked, process
-		- x filter based on selected tag
-		- x update after delete and add
-		- x if showing none, then show all
-	- x rename blogEtnries to allBlogEntries
-	- x if none
-	- x top links
-	- x making of page larger headers
-	- x form: show tag choice
-	- x enable tag comletion through clicking
-		- x mock click
-
-	- .. create endgame todo list
-
-
 - todo
 	- rename repository to coding-challenge-react-blogsite-calimoto
+	- documentation in tools
 	- jest tests
-	- code clean up
-		- all pages are sections
-		- document tools
 - GitHub
+	- two gifs
+		- mobile view
+		- computer view
 	- Prerequisites
 		- Node version
 	- 100% mobile
 	- design
 		- purposely kept a minimal design (shades of gray)
-	- coding
+	- coding choices
+	  	- Vite React
+	 	- React Router 6.4 createBrowserRouter
 		- FormManager: example of OOP
+		- useContext
 		- TypeScript functions have return types
 		- form accessibility
 		- stripTextOfDangerousContent
+		- suuid
+		- tools
+			- for testing
+			- auto-completion
+			- documentation while 
+			- every function has a single purpose
+	- edge cases handled elegantly
+		- 0 blog entries
+		- 1 blog entry
+		- 404 page
 	- coding environment
-		- prettier
+		- VSCode
+		- Prettier
+	- pVim
+		- Vercel
+			- automatica deployment from GitHub repository
 	- Git History
 		- intact with descriptive commits to follow the development	
-			- `git logs 
-			- `git checkout <hash>` and `git 
+			- `git logs --oneline` 
+			- `git checkout <hash>` to go to a specific commit
+			- `git switch -` to return
 	- tested
 		- Windows 10
 			- Firefox
@@ -97,41 +52,32 @@
 			- Samsung A52s Chrome
 	- version 2
 		- fix known issues:
-			- when user uses CTRL-Backend to delete the text in the Tags Textarea, it doesn't refocus after it switches to Input box.
-- making of site
-	- one long gif
-	- notes on all features
-- readme
-	- show mobile and computer views
-		- Google emulator
+			- form: tags field: when user uses CTRL-Backend to delete the text in the Tags Textarea, it doesn't refocus after it switches to Input box.
 - making of
-		- why tools
-			- test
-			- flexibility, e.g. enable user settings, sort order, etc. 
-		- Git history is intact
-		- suuid
-		- how to use tools, gif
-	- version 2
-		- edge cases of 0 entries and 1 entry are handled elegantly
-		- refactore into smaller components, e.g. PageBlog.tsx
-		- add color: look at some popular design first
-		- delete: Are you sure? Yes/No
-		- display all as list or single
-		- tags: different colors
-		- tags: like Stack Overflow
-		- handle various sized blog entries
-		- useContext
-		- date entry: try a sophisticated date control 
-		- body: markdown?
-		- show single page
-		- admin page
-			- two methods of tag selection
-			- A/B test
-		- create page link is a graphic
-		- Zod
-		- modal for create
-		- model for delete yes/no
-		- testing
-		- markdown
-		- shadcn/ui
-		- Tailwind
+	- long gif
+	- list features in gif
+- feature backlog
+	- refactor into smaller components
+		- PageBlog.tsx
+		- CreateEntry.tsx
+	- implement professional design
+		- color choices
+			- tags: various colors
+		- animation
+		- icons
+		- font
+		- images
+	- delete: add "are you sure" option
+	- add Tailwind/shadcn
+		- use Sass and Tailwind side-by-side where each has advantages
+	- permalinks for blog entries
+	- handle edge cases
+		- page-long blog entries
+		- hundreds of tags
+	- date entry: implement a sophisticated date control 
+	- body field: implement markdown
+	- show single page
+	- full CRUD features
+	- backend API
+		- Node/Express with CRUD routing
+		- connect to hosted database via Prisma
