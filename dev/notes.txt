@@ -56,48 +56,59 @@
 	- x top links
 	- x making of page larger headers
 	- x form: show tag choice
-	- .. enable tag comletion through clicking
-		- mock click
+	- x enable tag comletion through clicking
+		- x mock click
+
+	- .. create endgame todo list
 
 
-	- create endgame todo list
-	- known issues: when typing in tags, when it expands to a textArea you lose focus
+- todo
+	- rename repository to coding-challenge-react-blogsite-calimoto
+	- jest tests
 	- code clean up
-	- 100% mobile
-		- tag area is a dropdown
-		- (check on phone)
-		- check on chrome
-	- todo
-		- rename so not "et782"
-		- My Rides clickable
 		- all pages are sections
-		- making of
-			- gifs for mobile and computer, etc.
 		- document tools
-		- jest tests
-
-- readme
+- GitHub
 	- Prerequisites
 		- Node version
-	- Tested
+	- 100% mobile
+	- design
+		- purposely kept a minimal design (shades of gray)
+	- coding
+		- FormManager: example of OOP
+		- TypeScript functions have return types
+		- form accessibility
+		- stripTextOfDangerousContent
+	- coding environment
+		- prettier
+	- Git History
+		- intact with descriptive commits to follow the development	
+			- `git logs 
+			- `git checkout <hash>` and `git 
+	- tested
+		- Windows 10
+			- Firefox
+			- Chrome
+			- Opera
 		- Ubuntu 22.04
-		- Windows 10 
+			- Firefox
+			- Chrome
+		- Mobile
+			- Samsung A52s Chrome
+	- version 2
+		- fix known issues:
+			- when user uses CTRL-Backend to delete the text in the Tags Textarea, it doesn't refocus after it switches to Input box.
+- making of site
+	- one long gif
+	- notes on all features
+- readme
 	- show mobile and computer views
 		- Google emulator
 - making of
-	- (cull and delete above notes)
-	- note
-		- purposely kept a minimal design (shades of gray)
-		- TypeScript functions have return types
-		- prettier
-		- FormManager: example of OOP
-		- form accessibility
-		- stripTextOfDangerousContent
 		- why tools
 			- test
 			- flexibility, e.g. enable user settings, sort order, etc. 
 		- Git history is intact
-			- view with `git checkout <hash>` and `git 
 		- suuid
 		- how to use tools, gif
 	- version 2
