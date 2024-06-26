@@ -52,7 +52,7 @@
 		- x update after delete and add
 		- x if showing none, then show all
 	- x rename blogEtnries to allBlogEntries
-	- if none
+	- x if none
 	- .. top links
 	- form:
 		- show tag choice, tag comletion

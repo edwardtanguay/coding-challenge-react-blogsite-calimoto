@@ -17,11 +17,11 @@ body {
 	section.siteContent {
 		.stats {
 			text-align: center;
-			font-size: .9rem;
+			font-size: 0.9rem;
 			font-variant: small-caps;
 			color: #777;
 			font-style: italic;
-			margin-bottom: .5rem;
+			margin-bottom: 0.5rem;
 		}
 		.tagsArea {
 			display: flex;
@@ -154,7 +154,16 @@ body {
 			align-items: center;
 			margin-bottom: 0.7rem;
 			h1 {
-				font-size: 1.3rem;
+				a.mainHeader {
+					font-size: 1.3rem;
+					font-weight: normal;
+					font-style: normal;
+					color: #000;
+					&.active {
+						color: #000;
+						font-weight: normal;
+					}
+				}
 			}
 			a {
 				font-size: 0.8rem;
@@ -271,7 +280,16 @@ body {
 				align-items: center;
 				margin-bottom: 0.7rem;
 				h1 {
-					font-size: 1.3rem;
+					a.mainHeader {
+						font-size: 1.3rem;
+						font-weight: normal;
+						font-style: normal;
+						color: #000;
+						&.active {
+							color: #000;
+							font-weight: normal;
+						}
+					}
 				}
 				a {
 					font-size: 1rem;
