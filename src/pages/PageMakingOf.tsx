@@ -11,6 +11,7 @@ export const PageMakingOf = () => {
 				information, see the{" "}
 				<a href="nnn" target="_blank">GitHub repository</a>.
 			</p>
+			<img src="images/reactccdemo.gif" alt="demo of app"/>
 		</section>
 	);
 };
