@@ -101,6 +101,9 @@ export class FormManager {
 		} else if (tools.stringInArrayTooShort(tagItems, 2)) {
 			this.formInfo.tags.message = "";
 			this.formInfo.tags.error = "tag is less than 3 chars";
+		} else if (tools.stringInArrayTooLong(tagItems, 20)) {
+			this.formInfo.tags.message = "";
+			this.formInfo.tags.error = "tag is greater than 20 chars";
 		} else if (tools.arrayHasDuplicateItems(tagItems)) {
 			this.formInfo.tags.message = "";
 			this.formInfo.tags.error = "duplicate tags";

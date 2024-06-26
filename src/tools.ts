@@ -88,3 +88,12 @@ export const stringInArrayTooShort = (
 	}
 	return false;
 };
+
+export const stringInArrayTooLong = (arr: string[], limit: number): boolean => {
+	for (const str of arr) {
+		if (str.length > limit) {
+			return true;
+		}
+	}
+	return false;
+};
