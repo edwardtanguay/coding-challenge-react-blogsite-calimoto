@@ -15,6 +15,7 @@ Live site is online here: https://coding-challenge-react-blogsite-calimoto.verce
 - TypeScript
 - Sass
 - day.js
+- JSON data source
 - ESLint
 - Prettier
 
@@ -59,6 +60,19 @@ Live site is online here: https://coding-challenge-react-blogsite-calimoto.verce
 - **TypeScript** used exclusively
   - **return types** defined on functions
 - form uses **accessibility** features `fieldset`, `legend`, `htmlFor`
-- 
+- item ids are *short UUIDs*, i.e. 6-digit random alphanumeric characters, e.g. `34GHs2`
+- `tools.ts` contain all helper functions
+
+## development
+
+- total time and project progress: see GitHub log
+  - most commit messages clear and description
+- VSCode with Vim extension
+- ChatGPT occasionally, but no Copilot
+- TypeScript, ESLint, Prettier
+
+## feature backlog
+
+- nnn
 
 
