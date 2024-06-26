@@ -15,7 +15,8 @@ export const PageCreateEntry = () => {
 		FormManager.getBlankFormInfo()
 	);
 
-	const tagsExpandedRef = useRef<HTMLTextAreaElement>(null);
+	const tagsInputRef = useRef<HTMLInputElement>(null);
+	const tagsTextareaRef = useRef<HTMLTextAreaElement>(null);
 
 	const handleCancelForm = (e: React.MouseEvent<HTMLButtonElement>): void => {
 		e.preventDefault();
@@ -44,16 +45,31 @@ export const PageCreateEntry = () => {
 			case "tags":
 				const currentValue = formInfo.tags.value;
 				const newValue = value;
+
+				// // user is typing past the limit so switch from input to textarea and maintain focus
+				// if (
+				// 	currentValue.length <= characterLimitforOneLineTagEntry &&
+				// 	newValue.length > characterLimitforOneLineTagEntry
+				// ) {
+				// 	setTimeout(() => {
+				// 		if (tagsInputRef.current) {
+				// 			tagsInputRef.current.focus();
+				// 		}
+				// 	}, 0);
+				// }
+
+				// user is backspacing back under the limit so switch from textarea back to input and maintain focus
 				if (
 					currentValue.length <= characterLimitforOneLineTagEntry &&
 					newValue.length > characterLimitforOneLineTagEntry
 				) {
 					setTimeout(() => {
-						if (tagsExpandedRef.current) {
-							tagsExpandedRef.current.focus();
+						if (tagsTextareaRef.current) {
+							tagsTextareaRef.current.focus();
 						}
-					}, 0);
+					}, 100);
 				}
+
 				formInfo.tags.value = newValue;
 				break;
 				break;
@@ -137,6 +153,7 @@ export const PageCreateEntry = () => {
 									formInfo.tags.value.length >
 									characterLimitforOneLineTagEntry
 								}
+								ref={tagsInputRef}
 								value={formInfo.tags.value}
 								name="tags"
 								id="tags"
@@ -150,7 +167,7 @@ export const PageCreateEntry = () => {
 									formInfo.tags.value.length <=
 									characterLimitforOneLineTagEntry
 								}
-								ref={tagsExpandedRef}
+								ref={tagsTextareaRef}
 								value={formInfo.tags.value}
 								className="tagsExpanded"
 								onChange={(e) =>
