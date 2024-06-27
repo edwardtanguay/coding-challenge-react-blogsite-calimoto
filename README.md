@@ -7,7 +7,7 @@ Live site is online here: https://coding-challenge-react-blogsite-calimoto.verce
 
 ![reactccdemo](https://github.com/edwardtanguay/coding-challenge-react-blogsite-calimoto/assets/446574/d0c97f1b-567b-4b31-a437-acffc4196d14)
 
-## features
+## tech used
 
 - Vite
 - React
